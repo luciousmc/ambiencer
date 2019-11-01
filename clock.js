@@ -13,7 +13,7 @@ class Clock {
         let dayOrNight = this.hours < 12 ? "am" : "pm";
 
         let clock12 = `${this.hours > 12 ? `${this.hours - 12}`
-                                         : this.hours}:${this.minues < 10 ? `0${this.minutes}`
+                                         : this.hours}:${this.minutes < 10 ? `0${this.minutes}`
                                          : this.minutes} ${dayOrNight}`;
 
         let clock24 = `${this.hours < 10 ? `0${this.hours}` : this.hours}:
