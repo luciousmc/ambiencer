@@ -5,6 +5,38 @@ body {
     height: 75vh;
     background-color: purple;
 }
+.title-container {
+    display: flex;
+    background-color: lightblue;
+    height: 50%;
+    align-items: flex-end;
+    padding-left: 10%;
+}
+.title {
+    font-size: 5em;
+}
+.time-container {
+    display: flex;
+    background-color: lightcoral;
+    height: 50%;
+    justify-content: center;
+}
+.js-clock {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 50%;
+}
+.clock, .greeting {
+    color: white;
+}
+.clock {
+    font-size: 4rem;
+}
+.greeting {
+    font-size: 1.5rem;
+}
 .mood-bar {
     display: flex;
     align-items: center;
