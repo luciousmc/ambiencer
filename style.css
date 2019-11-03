@@ -4,6 +4,7 @@ body {
 #main-page {
     position: absolute;
     width: 100%;
+    display: none;
 }
 .welcome-main-container {
     height: 75vh;
@@ -59,4 +60,25 @@ body {
     width: 15%;
     background-color: white;
     font-size: 2rem;
+}
+.header-container {
+    height: 20vh;
+    background-color: orange;
+}
+.header-container h1 {
+    margin: auto;
+    font-size: 3.5em;
+    text-align: center;
+}
+.header-container .menu {
+    display: flex;
+    justify-content: space-around;
+}
+.section-header {
+    height: 10vh;
+    background-color: orangered;
+}
+.section-content-container {
+    height: 70vh;
+    background-color: firebrick;
 }
