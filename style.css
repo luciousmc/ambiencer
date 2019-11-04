@@ -62,8 +62,11 @@ body {
     font-size: 2rem;
 }
 .header-container {
+    position: fixed;
+    width: 100%;
     height: 20vh;
     background-color: orange;
+    z-index: 10;
 }
 .header-container h1 {
     margin: auto;
@@ -74,12 +77,18 @@ body {
     display: flex;
     justify-content: space-around;
 }
+.section-container {
+    position: relative;
+    top: 20vh;
+}
 .section-header {
     display: flex;
     height: 10vh;
     background-color: orangered;
     align-items: center;
     justify-content: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
 }
 .section-header h3 {
     margin: auto;
