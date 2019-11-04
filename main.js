@@ -2,6 +2,7 @@ $(document).ready(startApp);
 let clock = new Clock();
 
 function startApp(){
+    // SMOOTH SCROLLING 
     $('a').on('click', (event)=> {
         if (event.currentTarget.hash !== ''){
             const hash = event.currentTarget.hash;
@@ -11,5 +12,6 @@ function startApp(){
             }, 600)
         }
     })
+    
     clock.init();
 }
