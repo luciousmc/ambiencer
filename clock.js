@@ -26,7 +26,6 @@ class Clock {
         $('.greeting').text(greeting);
     }
     setGreeting(){
-        console.log('the  hours: ', this.hours);
         switch(this.hours){
             case 1:
             case 2:
