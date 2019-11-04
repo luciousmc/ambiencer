@@ -75,8 +75,14 @@ body {
     justify-content: space-around;
 }
 .section-header {
+    display: flex;
     height: 10vh;
     background-color: orangered;
+    align-items: center;
+    justify-content: center;
+}
+.section-header h3 {
+    margin: auto;
 }
 .section-content-container {
     height: 70vh;
