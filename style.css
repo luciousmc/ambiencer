@@ -4,7 +4,8 @@ body {
 #main-page {
     position: absolute;
     width: 100%;
-    display: none;
+    z-index: 11;
+    /* display: none; */
 }
 .welcome-main-container {
     height: 75vh;

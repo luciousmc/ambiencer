@@ -12,9 +12,17 @@ function startApp(){
             }, 600)
         }
     })    
+    addEventListeners();
     clock.init();
 }
+function addEventListeners(){
+    $('.mood-button-container').on('click', 'button', (event)=> {
+        const moodText = event.currentTarget.firstChild.textContent;
+        switchMood(moodText.toLowerCase());
+    })
+}
 function switchMood (mood){
+    debugger;
     generateHeaderText(mood);
 }
 function generateHeaderText(mood){
