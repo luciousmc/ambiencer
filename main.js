@@ -16,13 +16,18 @@ function startApp(){
     clock.init();
 }
 function addEventListeners(){
-    $('.mood-button-container').on('click', 'button', (event)=> {
+    $('.mood-button-container').on('click', 'button', (event)=>{
         const moodText = event.currentTarget.firstChild.textContent;
         switchMood(moodText.toLowerCase());
+        $('#main-page').fadeOut(700);
+        $('#content-page').fadeIn(700);
+    })
+    $('.back-to-main').on('click', (event)=>{
+        $('#main-page').fadeIn(700);
+        $('#content-page').fadeOut(700);
     })
 }
 function switchMood (mood){
-    debugger;
     generateHeaderText(mood);
 }
 function generateHeaderText(mood){

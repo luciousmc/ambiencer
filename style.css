@@ -62,6 +62,9 @@ body {
     background-color: white;
     font-size: 2rem;
 }
+#content-page {
+    display: none;
+}
 .header-container {
     position: fixed;
     width: 100%;
@@ -73,6 +76,19 @@ body {
     margin: auto;
     font-size: 3.5em;
     text-align: center;
+}
+.header-container h3 {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    width: 10%;
+    padding: 15px;
+    border: 2px solid white;
+}
+.header-container h3:hover {
+    background-color: whitesmoke;
+    color: lightblue;
+    cursor: pointer;
 }
 .header-container .menu {
     display: flex;
