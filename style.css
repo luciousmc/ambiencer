@@ -5,7 +5,6 @@ body {
     position: absolute;
     width: 100%;
     z-index: 11;
-    /* display: none; */
 }
 .welcome-main-container {
     height: 75vh;
@@ -20,6 +19,13 @@ body {
 }
 .title {
     font-size: 5em;
+    width: 75%;
+}
+.weather-box {
+    align-self: flex-start;
+    background-color: white;
+    padding: 25px;
+    text-align: center;
 }
 .time-container {
     display: flex;

@@ -1,5 +1,6 @@
 $(document).ready(startApp);
 let clock = new Clock();
+let weather = new Weather();
 
 function startApp(){
     // SMOOTH SCROLLING 
@@ -14,6 +15,7 @@ function startApp(){
     })    
     addEventListeners();
     clock.init();
+    weather.init();
 }
 function addEventListeners(){
     $('.mood-button-container').on('click', 'button', (event)=>{
