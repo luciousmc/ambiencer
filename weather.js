@@ -1,5 +1,9 @@
 class Weather {
     constructor(){
+        this.city = null;
+        this.state = null;
+        this.temp = null;
+        this.tempUnit = null;
         this.getCurPosSuccess = this.getCurPosSuccess.bind(this);
     }
     getPositionFromBrowser(){
@@ -13,23 +17,32 @@ class Weather {
     getCurPosSuccess(geolocationObj){
         const longitude = geolocationObj.coords.longitude;
         const latitude = geolocationObj.coords.latitude;
-
-        this.getWeather(latitude, longitude);
+        this.getLocation(latitude, longitude);
     }
     getCurPosFail(geolocationObj){
         console.log('something went wrong: ', geolocationObj);
     }
-    getWeather(latitude, longitude){
-        console.log('im in get weather: ',  latitude, longitude);
-        const forecastURL = '';
-        const temp = '';
-        const city = '';
-        const state = '';
-
+    getLocation(latitude, longitude){
         $.getJSON(`https://api.weather.gov/points/${latitude},${longitude}`, data=>{
-            forecastURL = data.forecast;
-            ({city, state} = data.properties.relativeLocation.properties);
+            const {forecast} = data.properties;
+            const {city, state} = data.properties.relativeLocation.properties;
+            this.city = city;
+            this.state = state;
+            this.forecastURL = forecast;          
+            this.getTemp(this.forecastURL);  
+        });       
+    }
+    getTemp(url){
+        $.getJSON(url, data=>{
+            const {temperature, temperatureUnit} = data.properties.periods[0];
+            this.temp = temperature;
+            this.tempUnit = temperatureUnit;
+            this.setWeather();
         })
+    }
+    setWeather(){
+        $('.weather-temp').text(this.temp + '°' + this.tempUnit);
+        $('.weather-location').text(this.city + ', ' + this.state);
     }
     init(){
         this.getPositionFromBrowser();
