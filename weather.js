@@ -23,7 +23,7 @@ class Weather {
         console.log('something went wrong: ', geolocationObj);
     }
     getLocation(latitude, longitude){
-        $.getJSON(`https://api.weather.gov/points/${latitude},${longitude}`, data=>{
+        $.getJSON(`https://api.weather.gov/points/${latitude},${longitude}`, (data)=>{
             const {forecast} = data.properties;
             const {city, state} = data.properties.relativeLocation.properties;
             this.city = city;
@@ -33,7 +33,7 @@ class Weather {
         });       
     }
     getTemp(url){
-        $.getJSON(url, data=>{
+        $.getJSON(url, (data)=>{
             const {temperature, temperatureUnit} = data.properties.periods[0];
             this.temp = temperature;
             this.tempUnit = temperatureUnit;
