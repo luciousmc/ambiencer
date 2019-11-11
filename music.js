@@ -19,10 +19,10 @@ class MusicPlayer {
             key: this.apiKey,
             q: this.makeQuery(mood)
         }
-        console.log('the queryOptions object is: ', queryOptions);
         $.getJSON('https://www.googleapis.com/youtube/v3/search', queryOptions)
             .done((response)=>{
-                console.log('the response is: ', response);
+                console.log('Succes! the response is: ', response);
+                this.render(response.items);
             })
             .fail((err)=>{
                 console.log('there was an error: ', err)
@@ -36,8 +36,20 @@ class MusicPlayer {
         for (let i = 0; i < moodsLen; i++){
             output += moodWords[i] + ' songs || '; 
         }
-        console.log('the output of the query is: ', output);
         return output;
     }
-    render(){}
+    generateYoutubeOptions(){
+
+    }
+    render(results){
+        console.log('results are ', results);
+        const YTBaseURL = 'http://www.youtube.com/embed?';
+        
+        let iFrame = $('<iframe>');
+        iFrame.attr({
+            width: 640,
+            height: 480,
+            src: `${YTBaseURL}${this.generateYoutubeOptions()}`
+        })
+    }
 }
