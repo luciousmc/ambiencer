@@ -38,18 +38,47 @@ class MusicPlayer {
         }
         return output;
     }
-    generateYoutubeOptions(){
+    generateYoutubeOptions(videoArray){
+        // returns a query string with youtube options
+        const video = this.randomize(videoArray);
+        console.log('the video is ', video);
+        let output = '';
 
+        const youtubeOptions = {
+            listType: 'playlist', // load a playlist
+            list: video.id.playlistId,// playlist ID
+            fs: '0', // disable full screen button
+            autoplay: '1', // autoplay video when it loads
+            disablekb: '1', // disable keyboard functions on video
+            iv_load_policy: '3', // disable any annotations a video may have
+            color: 'white', // change progress bar color and disable modest branding
+            frameborder: '0', // remove the border around the video
+        }
+
+        for (let prop in youtubeOptions){
+            let val = youtubeOptions[prop];
+            if (output === ''){
+                output += `${prop}=${val}`;
+            }
+            output += `&${prop}=${val}`;
+        }
+        return output;
+    }
+    randomize(array){
+        const randI = Math.floor(Math.random() * array.length) + 1;
+        console.log('random number ', randI);
+        return array[randI];
     }
     render(results){
-        console.log('results are ', results);
         const YTBaseURL = 'http://www.youtube.com/embed?';
-        
+
         let iFrame = $('<iframe>');
         iFrame.attr({
             width: 640,
             height: 480,
-            src: `${YTBaseURL}${this.generateYoutubeOptions()}`
+            src: `${YTBaseURL}${this.generateYoutubeOptions(results)}`
         })
+        console.log('the final iframe element is: ', iFrame);
+        $('.video-container').append(iFrame);
     }
 }
