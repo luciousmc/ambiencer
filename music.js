@@ -46,7 +46,7 @@ class MusicPlayer {
 
         const youtubeOptions = {
             listType: 'playlist', // load a playlist
-            list: video.id.playlistId,// playlist ID
+            list: video.id.playlistId, // playlist ID
             fs: '0', // disable full screen button
             autoplay: '1', // autoplay video when it loads
             disablekb: '1', // disable keyboard functions on video
@@ -59,24 +59,26 @@ class MusicPlayer {
             let val = youtubeOptions[prop];
             if (output === ''){
                 output += `${prop}=${val}`;
+            } else {
+                output += `&${prop}=${val}`;
             }
-            output += `&${prop}=${val}`;
         }
         return output;
     }
     randomize(array){
-        const randI = Math.floor(Math.random() * array.length) + 1;
+        const randI = Math.floor(Math.random() * array.length);
         console.log('random number ', randI);
         return array[randI];
     }
     render(results){
-        const YTBaseURL = 'http://www.youtube.com/embed?';
+        const yt_baseURL = 'http://www.youtube.com/embed?';
+        const yt_options = this.generateYoutubeOptions(results);
 
         let iFrame = $('<iframe>');
         iFrame.attr({
             width: 640,
             height: 480,
-            src: `${YTBaseURL}${this.generateYoutubeOptions(results)}`
+            src: `${yt_baseURL}${yt_options}`
         })
         console.log('the final iframe element is: ', iFrame);
         $('.video-container').append(iFrame);

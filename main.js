@@ -19,15 +19,18 @@ function startApp(){
     weather.init();
 }
 function addEventListeners(){
+    // mood buttons click handler
     $('.mood-button-container').on('click', 'button', (event)=>{
         const moodText = event.currentTarget.firstChild.textContent;
         switchMood(moodText.toLowerCase());
         $('#main-page').fadeOut(700);
         $('#content-page').fadeIn(700);
     })
+    // change mood click handler
     $('.back-to-main').on('click', (event)=>{
         $('#main-page').fadeIn(700);
         $('#content-page').fadeOut(700);
+        $('.video-container').empty();
     })
 }
 function switchMood (mood){
