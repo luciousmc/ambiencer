@@ -15,7 +15,8 @@ class MusicPlayer {
         const queryOptions = {
             part: 'snippet',
             fields: 'items(id, snippet(title, description))',
-            type: 'playlist',
+            videoEmbeddable: 'true',
+            type: 'video',
             key: this.apiKey,
             q: this.makeQuery(mood)
         }
@@ -45,20 +46,20 @@ class MusicPlayer {
         let output = '';
 
         const youtubeOptions = {
-            listType: 'playlist', // load a playlist
-            list: video.id.playlistId, // playlist ID
-            fs: '0', // disable full screen button
-            autoplay: '1', // autoplay video when it loads
-            disablekb: '1', // disable keyboard functions on video
-            iv_load_policy: '3', // disable any annotations a video may have
-            color: 'white', // change progress bar color and disable modest branding
-            frameborder: '0', // remove the border around the video
+            // listType: 'video',       // load a playlist
+            // list: video.id.videoId,  // playlist ID
+            id: video.id.videoId,       // video ID
+            fs: '0',                    // disable full screen button
+            autoplay: '1',              // autoplay video when it loads
+            disablekb: '1',             // disable keyboard functions on video
+            iv_load_policy: '3',        // disable any annotations a video may have
+            modestbranding: '1',        // removes youtube logo
         }
 
         for (let prop in youtubeOptions){
             let val = youtubeOptions[prop];
             if (output === ''){
-                output += `${prop}=${val}`;
+                output += `${val}?`;
             } else {
                 output += `&${prop}=${val}`;
             }
@@ -71,14 +72,16 @@ class MusicPlayer {
         return array[randI];
     }
     render(results){
-        const yt_baseURL = 'http://www.youtube.com/embed?';
+        console.log('should be an array of video objects ', results);
+        const yt_baseURL = 'http://www.youtube.com/embed/';
         const yt_options = this.generateYoutubeOptions(results);
 
         let iFrame = $('<iframe>');
         iFrame.attr({
             width: 640,
             height: 480,
-            src: `${yt_baseURL}${yt_options}`
+            src: `${yt_baseURL}${yt_options}`,
+            frameborder: 0,
         })
         console.log('the final iframe element is: ', iFrame);
         $('.video-container').append(iFrame);
