@@ -2,7 +2,7 @@
 class MusicPlayer {
     constructor(keys){
         this.moodVariations = {
-            happy: ['happy', 'joyful'],
+            happy: ['happy', 'cheerful'],
             sad: ['sad', 'depressing', 'instrumental sad'],
             romantic: ['love', 'romantic', 'sappy'],
             hype: ['hyphy', 'hype', 'party'],
@@ -46,8 +46,8 @@ class MusicPlayer {
         let output = '';
 
         const youtubeOptions = {
-            // listType: 'video',       // load a playlist
-            // list: video.id.videoId,  // playlist ID
+            // listType: 'playlist',       // load a playlist
+            // list: video.id.playlistId,  // playlist ID
             id: video.id.videoId,       // video ID
             fs: '0',                    // disable full screen button
             autoplay: '1',              // autoplay video when it loads
@@ -60,8 +60,10 @@ class MusicPlayer {
             let val = youtubeOptions[prop];
             if (output === ''){
                 output += `${val}?`;
-            } else {
+            } else if (output[output.length-1] !== '?'){
                 output += `&${prop}=${val}`;
+            } else {
+                output += `${prop}=${val}`;
             }
         }
         return output;
@@ -78,10 +80,12 @@ class MusicPlayer {
 
         let iFrame = $('<iframe>');
         iFrame.attr({
+            type: 'text/html',
             width: 640,
-            height: 480,
+            height: 360,
             src: `${yt_baseURL}${yt_options}`,
             frameborder: 0,
+            allow: 'encrypted-media; accelerometer; gyroscope;'
         })
         console.log('the final iframe element is: ', iFrame);
         $('.video-container').append(iFrame);
