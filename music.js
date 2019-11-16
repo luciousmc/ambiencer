@@ -3,11 +3,11 @@ class MusicPlayer {
     constructor(keys){
         this.moodVariations = {
             happy: ['happy', 'cheerful'],
-            sad: ['sad', 'depressing', 'instrumental sad'],
+            sad: ['sad', 'depressing'],
             romantic: ['love', 'romantic', 'sappy'],
             hype: ['hyphy', 'hype', 'party'],
             chill: ['lo-fi', 'relaxing'],
-            motivated: ['workout', 'motivational', 'encouraging']
+            motivated: ['party', 'motivational']
         }
         this.apiKey = keys.music;
     }
@@ -17,6 +17,7 @@ class MusicPlayer {
             fields: 'items(id, snippet(title, description))',
             videoEmbeddable: 'true',
             type: 'video',
+            videoLicense: 'creativeCommon',
             key: this.apiKey,
             q: this.makeQuery(mood)
         }
@@ -35,7 +36,7 @@ class MusicPlayer {
         let output = '';
 
         for (let i = 0; i < moodsLen; i++){
-            output += moodWords[i] + ' songs || '; 
+            output += moodWords[i] + ' music || '; 
         }
         return output;
     }
