@@ -32,6 +32,8 @@ class ImageApi {
         return output;
     }
     render(imageArray){
-        
+        for (let section = 1, imageI = 0; section < 5; section++, imageI++){
+            $('.section-' + section).css( `background-image`, `url(${imageArray[imageI]})`)
+        }
     }
 }
