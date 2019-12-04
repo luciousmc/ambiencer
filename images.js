@@ -1,19 +1,19 @@
 class ImageApi {
     constructor(keys){
         this.moodVariations = {
-            happy: ['happy', 'cheerful'],
-            sad: ['sad', 'depressing'],
-            romantic: ['love', 'romantic', 'sappy'],
-            hype: ['hyphy', 'hype', 'party'],
-            chill: ['lo-fi', 'relaxing'],
-            motivated: ['party', 'motivational']
+            happy: ['happy', 'cheerful', 'laugh', 'smile'],
+            sad: ['sad', 'gloomy', 'sorrow'],
+            romantic: ['love', 'roses', 'sappy', 'romantic'],
+            hype: ['exciting', 'hype', 'party', 'rave'],
+            chill: ['bonfire', 'fireplace', 'cozy'],
+            motivated: ['confident', 'motivational']
         }
         this.apiKey = keys.images;
         this.images = [];
     }
     getImages(mood){
         const imageParams = {
-            q: this.makeQuery(mood),
+            q: this.makeQuery(this.moodVariations[mood]),
             // image_type: 'photo',
             // orientation: 'horizontal',
             key: this.apiKey
@@ -28,8 +28,20 @@ class ImageApi {
                 })
     }
     makeQuery(mood){
-        let output = this.moodVariations[mood][0];
+        let output = this.randomize(mood);
         return output;
+    }
+    randomize(array){
+        // Get the length of the array
+        const arrLen = array.length;
+
+        // If there is only 1 item in the array just return it
+        if (arrLen < 2) return array[0];
+        
+        // If there is  more than one item in the array
+        // pick a random item from the array
+        const randI = Math.floor(Math.random() * arrLen);
+        return array[randI];
     }
     render(imageArray){
         for (let section = 1, imageI = 0; section < 5; section++, imageI++){
