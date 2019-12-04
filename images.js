@@ -9,30 +9,29 @@ class ImageApi {
             motivated: ['party', 'motivational']
         }
         this.apiKey = keys.images;
+        this.images = [];
     }
     getImages(mood){
         const imageParams = {
-            query: this.makeQuery(mood),
-            client_id: this.apiKey,
-            orientation: 'landscape',
+            q: this.makeQuery(mood),
+            // image_type: 'photo',
+            // orientation: 'horizontal',
+            key: this.apiKey
         }
-        const ajaxOptions = {
-            url: 'https://api.unsplash.com',
-            method: 'GET',
-            dataType: 'JSON',
-            // headers: {
-            //     'Accept-Version': 'v1'
-            // },
-            data: imageParams,
-        }
-        $.ajax(ajaxOptions)
-            .done((data)=>{
-                console.log('the data returned is: ', data);
-            });
+        $.getJSON('https://pixabay.com/api/', imageParams)
+                .done((response)=>{
+                    console.log('the response was ', response);
+                    this.images = response.hits.map((hit)=>{
+                        return hit.largeImageURL;
+                    })
+                    this.render(this.images);
+                })
     }
     makeQuery(mood){
         let output = this.moodVariations[mood][0];
         return output;
     }
-    render(){}
+    render(imageArray){
+        
+    }
 }
