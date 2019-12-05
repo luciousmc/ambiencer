@@ -39,6 +39,7 @@ function switchMood (mood){
     generateHeaderText(mood);
     music.getMusic(mood);
     images.getImages(mood);
+    news.getNews(mood);
 }
 function generateHeaderText(mood){
     const musicHeader = $('#music h1');
