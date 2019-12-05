@@ -2,17 +2,18 @@ body {
     margin: 0;
 }
 #main-page {
+    background-image: url('http://imagebank.biz/wp-content/uploads/2014/02/76747.jpg');
     position: absolute;
     width: 100%;
     z-index: 11;
 }
 .welcome-main-container {
     height: 75vh;
-    background-color: purple;
+    /* background-color: purple; */
 }
 .title-container {
     display: flex;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     height: 50%;
     align-items: flex-end;
     padding-left: 10%;
@@ -23,13 +24,13 @@ body {
 }
 .weather-box {
     align-self: flex-start;
-    background-color: white;
+    /* background-color: white; */
     padding: 25px;
     text-align: center;
 }
 .time-container {
     display: flex;
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     height: 50%;
     justify-content: center;
 }
@@ -39,29 +40,30 @@ body {
     flex-direction: column;
     width: 50%;
 }
-.clock, .greeting {
+/* .clock, .greeting {
     color: white;
-}
+} */
 .clock {
     font-size: 4rem;
     margin-bottom: 0;
 }
 .greeting {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
 .mood-bar {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 25vh;
-    background-color: red;
+    /* background-color: red; */
 }
 .mood-button-container {
     display: flex;
     justify-content: space-around;
     width: 80%;
     height: 50%;
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
 .mood-button {
     width: 15%;
