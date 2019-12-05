@@ -14,7 +14,7 @@ body {
 .title-container {
     display: flex;
     background-color: lightblue;
-    height: 50%;
+    height: 40%;
     align-items: flex-end;
     padding-left: 10%;
 }
@@ -50,16 +50,29 @@ body {
     flex-direction: column;
     width: 50%;
 }
-/* .clock, .greeting {
+.clock, .greeting, .mood-text {
     color: white;
-} */
+}
 .clock {
-    font-size: 4rem;
-    margin-bottom: 0;
+    font-size: 8vw;
+    margin: 0;
 }
 .greeting {
-    font-size: 2rem;
+    font-size: 3.5vw;
     font-weight: bold;
+    margin: 0;
+}
+.button-header-container {
+    background-color: black;
+    display: flex;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+.mood-text {
+    font-family: Times;
+    font-size: 3.5vw;
+    margin: 0;
 }
 .mood-bar {
     display: flex;
@@ -78,7 +91,7 @@ body {
 .mood-button {
     width: 15%;
     background-color: white;
-    font-size: 2rem;
+    font-size: 2.2vw;
 }
 #content-page {
     display: none;
