@@ -5,11 +5,12 @@ class ImageApi {
             sad: ['sad', 'gloomy', 'sorrow'],
             romantic: ['love', 'roses', 'sappy', 'romantic'],
             hype: ['exciting', 'hype', 'party', 'rave'],
-            chill: ['bonfire', 'fireplace', 'cozy'],
+            chill: ['lo-fi', 'bonfire', 'fireplace', 'cozy'],
             motivated: ['confident', 'motivational']
         }
         this.apiKey = keys.images;
         this.images = [];
+        this.imageCount = 4;
     }
     getImages(mood){
         const imageParams = {
@@ -20,11 +21,10 @@ class ImageApi {
         }
         $.getJSON('https://pixabay.com/api/', imageParams)
                 .done((response)=>{
-                    console.log('the response was ', response);
                     this.images = response.hits.map((hit)=>{
                         return hit.largeImageURL;
                     })
-                    this.render(this.images);
+                    this.getRandomImages(this.images);
                 })
     }
     makeQuery(mood){
@@ -43,9 +43,22 @@ class ImageApi {
         const randI = Math.floor(Math.random() * arrLen);
         return array[randI];
     }
+    getRandomImages(imageArray){
+        const arrLen = imageArray.length;
+        const output = [];
+
+        for (let i = 0; i < this.imageCount; i++){
+            const randI = Math.floor(Math.random() * arrLen);
+            output.push(imageArray[randI]);
+        }
+        this.render(output);
+    }
     render(imageArray){
-        for (let section = 1, imageI = 0; section < 5; section++, imageI++){
-            $('.section-' + section).css( `background-image`, `url(${imageArray[imageI]})`)
+        const arrLen = imageArray.length;
+
+        for (let i = 0, section = 1; i < arrLen; i++, section++){
+            $('.section-' + section)
+                .css( `background-image`, `url(${imageArray[i]})`)
         }
     }
 }
