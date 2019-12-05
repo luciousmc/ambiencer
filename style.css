@@ -2,35 +2,45 @@ body {
     margin: 0;
 }
 #main-page {
-    background-image: url('http://imagebank.biz/wp-content/uploads/2014/02/76747.jpg');
+    /* background-image: url('http://imagebank.biz/wp-content/uploads/2014/02/76747.jpg'); */
     position: absolute;
     width: 100%;
     z-index: 11;
 }
 .welcome-main-container {
     height: 75vh;
-    /* background-color: purple; */
+    background-color: purple;
 }
 .title-container {
     display: flex;
-    /* background-color: lightblue; */
+    background-color: lightblue;
     height: 50%;
     align-items: flex-end;
     padding-left: 10%;
 }
 .title {
+    position: relative;
     font-size: 5em;
     width: 75%;
 }
+.title:after {
+    position: absolute;
+    content: 'The best way to set the mood';
+    font-size: 1.2rem;
+    font-family: helvetica;
+    font-style: italic;
+    left: 29px;
+    bottom: -16px;
+}
 .weather-box {
     align-self: flex-start;
-    /* background-color: white; */
+    background-color: white;
     padding: 25px;
     text-align: center;
 }
 .time-container {
     display: flex;
-    /* background-color: lightcoral; */
+    background-color: lightcoral;
     height: 50%;
     justify-content: center;
 }
@@ -56,14 +66,14 @@ body {
     align-items: center;
     justify-content: center;
     height: 25vh;
-    /* background-color: red; */
+    background-color: red;
 }
 .mood-button-container {
     display: flex;
     justify-content: space-around;
     width: 80%;
     height: 50%;
-    /* background-color: burlywood; */
+    background-color: burlywood;
 }
 .mood-button {
     width: 15%;
