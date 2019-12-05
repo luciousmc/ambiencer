@@ -42,7 +42,7 @@ class MusicPlayer {
     }
     generateYoutubeOptions(videoArray){
         // returns a query string with youtube options
-        const video = this.randomize(videoArray);
+        const video = shared.randomize(videoArray);
         console.log('the video is ', video);
         let output = '';
 
@@ -68,11 +68,6 @@ class MusicPlayer {
             }
         }
         return output;
-    }
-    randomize(array){
-        const randI = Math.floor(Math.random() * array.length);
-        console.log('random number ', randI);
-        return array[randI];
     }
     render(results){
         console.log('should be an array of video objects ', results);
