@@ -10,5 +10,16 @@ const shared = {
          // pick a random item from the array
          const randI = Math.floor(Math.random() * arrLen);
          return array[randI];
+    },
+    reduceResultByAmt: (imageArray, amt)=>{
+        debugger;
+        const arrLen = imageArray.length;
+        const output = [];
+
+        for (let i = 0; i < amt; i++){
+            const randI = Math.floor(Math.random() * arrLen);
+            output.push(imageArray[randI]);
+        }
+        return output;
     }
 }

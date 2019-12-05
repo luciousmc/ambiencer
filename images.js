@@ -10,7 +10,7 @@ class ImageApi {
         }
         this.apiKey = keys.images;
         this.images = [];
-        this.imageCount = 4;
+        this.imgCount = 4;
     }
     getImages(mood){
         const imageParams = {
@@ -24,22 +24,13 @@ class ImageApi {
                     this.images = response.hits.map((hit)=>{
                         return hit.largeImageURL;
                     })
-                    this.getRandomImages(this.images);
+                    const imagesToDisplay = shared.reduceResultByAmt(this.images, this.imgCount);
+                    this.render(imagesToDisplay);
                 })
     }
     makeQuery(mood){
         let output = shared.randomize(mood);
         return output;
-    }
-    getRandomImages(imageArray){
-        const arrLen = imageArray.length;
-        const output = [];
-
-        for (let i = 0; i < this.imageCount; i++){
-            const randI = Math.floor(Math.random() * arrLen);
-            output.push(imageArray[randI]);
-        }
-        this.render(output);
     }
     render(imageArray){
         const arrLen = imageArray.length;
