@@ -3,6 +3,7 @@ let clock = new Clock();
 let weather = new Weather();
 let music = new MusicPlayer(apiKeys);
 let images = new ImageApi(apiKeys);
+let news = new NewsApi(apiKeys);
 
 function startApp(){
     // SMOOTH SCROLLING 
