@@ -138,7 +138,8 @@ body {
 .section-header {
     display: flex;
     height: 10vh;
-    background-color: orangered;
+    background-color: black;
+    color: white;
     align-items: center;
     justify-content: center;
     border-top: 2px solid white;
