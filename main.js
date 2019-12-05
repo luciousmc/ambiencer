@@ -2,6 +2,7 @@ $(document).ready(startApp);
 let clock = new Clock();
 let weather = new Weather();
 let music = new MusicPlayer(apiKeys);
+let images = new ImageApi(apiKeys);
 
 function startApp(){
     // SMOOTH SCROLLING 
@@ -36,6 +37,7 @@ function addEventListeners(){
 function switchMood (mood){
     generateHeaderText(mood);
     music.getMusic(mood);
+    images.getImages(mood);
 }
 function generateHeaderText(mood){
     const musicHeader = $('#music h1');
