@@ -37,7 +37,10 @@ class ImageApi {
 
         for (let i = 0, section = 1; i < arrLen; i++, section++){
             $('.section-' + section)
-                .css( `background-image`, `url(${imageArray[i]})`)
+                .css({ 
+                    'background-image': `url(${imageArray[i]})`,
+                    'position': 'relative',
+                })       
         }
     }
 }
