@@ -15,14 +15,14 @@ const shared = {
     },
     reduceResultByAmt: (array, amt)=>{ // Reduce the given array by the amount given
         // Get the length of the given array
-        const arrLen = array.length;
+        let arrLen = array.length;
 
         // Empty array to return  result of reduction
         const output = [];
 
-        for (let i = 0; i < amt; i++){
+        for (let i = 0; i < amt; i++, arrLen--){
             const randI = Math.floor(Math.random() * arrLen);
-            output.push(array[randI]);
+            output.push(array.splice(randI,1)[0]);
         }
         return output;
     }

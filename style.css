@@ -166,7 +166,7 @@ body {
     align-items: center;
 }
 #news-content-container {
-    width: 75%;
+    max-width: 75%;
     color: white;
     /* background-color: white; */
 }
@@ -177,13 +177,12 @@ body {
 }
 .news-list li {
     font-family: Arial Narrow;
-    font-size: 2vw;
-    text-align: center;
+    font-size: 1.5em;
     text-shadow: 1px 1px 1px gray;
     margin-bottom: 15px;
     padding-left: 5px;
-    /* border-left: 2px solid red; */
+    border-left: 2px solid red;
 }
-.video-container {
+.video-container, #news-content-container {
     z-index: 1;
 }

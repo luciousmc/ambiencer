@@ -23,6 +23,7 @@ class NewsApi {
                 .done((result)=>{
                     console.log('the news result object is', result);
                     const {articles} = result;
+                    debugger;
                     const newsToDisplay = shared.reduceResultByAmt(articles, this.articleAmt);
                     this.render(newsToDisplay);
                 })
