@@ -33,6 +33,7 @@ function addEventListeners(){
         $('#main-page').fadeIn(700);
         $('#content-page').fadeOut(700);
         $('.video-container').empty();
+        $('#news-content-container').empty();
     })
 }
 function switchMood (mood){

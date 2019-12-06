@@ -31,22 +31,21 @@ class NewsApi {
                 })
     }
     makeQuery(mood){
-        let output = this.randomize(this.moodVariations[mood]);
+        const output = shared.randomize(this.moodVariations[mood]);
         return output;
     }
-    randomize(array){
-        // Get the length of the array
-        const arrLen = array.length;
-
-        // If there is only 1 item in the array just return it
-        if (arrLen < 2) return array[0];
-        
-        // If there is  more than one item in the array
-        // pick a random item from the array
-        const randI = Math.floor(Math.random() * arrLen);
-        return array[randI];
-    }
     render(newsArray){
-        
+        console.log('the news.render function has this array...', newsArray)
+        const arrLen = newsArray.length;
+        let container = $('#news-content-container');
+        let ul = $('<ul>').addClass('news-list');
+
+        for (let i = 0; i < arrLen; i++){
+            let li = $('<li>').addClass('news-item ' + i);
+            li.text(newsArray[i].title);
+            ul.append(li);
+        }
+
+        container.append(ul);
     }
 }
