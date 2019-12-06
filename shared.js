@@ -11,14 +11,13 @@ const shared = {
          const randI = Math.floor(Math.random() * arrLen);
          return array[randI];
     },
-    reduceResultByAmt: (imageArray, amt)=>{
-        debugger;
-        const arrLen = imageArray.length;
+    reduceResultByAmt: (array, amt)=>{
+        const arrLen = array.length;
         const output = [];
 
         for (let i = 0; i < amt; i++){
             const randI = Math.floor(Math.random() * arrLen);
-            output.push(imageArray[randI]);
+            output.push(array[randI]);
         }
         return output;
     }

@@ -2,6 +2,7 @@ class NewsApi {
     constructor(keys){
         this.endpoint = 'https://newsapi.org/v2/everything';
         this.apiKey = keys.news;
+        this.articleAmt = 6;
         this.moodVariations = {
             happy: ['happy', 'cheerful', 'laugh', 'smile'],
             sad: ['sad', 'gloomy', 'sorrow'],
@@ -21,6 +22,9 @@ class NewsApi {
         $.getJSON(this.endpoint, ajaxOptions)
                 .done((result)=>{
                     console.log('the news result object is', result);
+                    const {articles} = result;
+                    const newsToDisplay = shared.reduceResultByAmt(articles, this.articleAmt);
+                    this.render(newsToDisplay);
                 })
                 .fail((err)=>{
                     console.log('there was an error ', err);
@@ -42,5 +46,7 @@ class NewsApi {
         const randI = Math.floor(Math.random() * arrLen);
         return array[randI];
     }
-    render(){}
+    render(newsArray){
+        
+    }
 }
