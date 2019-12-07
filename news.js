@@ -3,6 +3,7 @@ class NewsApi {
         this.endpoint = 'https://newsapi.org/v2/everything';
         this.apiKey = keys.news;
         this.articleAmt = 6;
+        this.container = $('#news-content-container');
         this.moodVariations = {
             happy: ['happy', 'cheerful', 'laugh', 'smile'],
             sad: ['sad', 'gloomy', 'sorrow'],
@@ -23,7 +24,6 @@ class NewsApi {
                 .done((result)=>{
                     console.log('the news result object is', result);
                     const {articles} = result;
-                    debugger;
                     const newsToDisplay = shared.reduceResultByAmt(articles, this.articleAmt);
                     this.render(newsToDisplay);
                 })
@@ -43,6 +43,29 @@ class NewsApi {
     renderArticle(article){
         // to be displayed when an article title is clicked
         console.log('the article was clicked! ', article);
+        let container = $('<div>').attr('id', 'news-article-container');
+        let imgContainer = $('<div>').addClass('article-image-container');
+        let articleImg = $('<img>').attr({
+                                        src: article.urlToImage,
+                                        alt: 'Article Image',
+                                        class: 'article-image'
+                                    });
+        imgContainer.append(articleImg);
+        container.append(imgContainer);
+
+        let articleTitleContainer = $('<div>').addClass('article-title-container');
+        let articleTitle = $('<h3>').addClass('article-title').text(article.title);
+        articleTitleContainer.append(articleTitle);
+        container.append(articleTitleContainer);
+        
+        let articleContentContainer = $('<div>').addClass('article-content-container');
+        let articleContent = $('<p>').addClass('article-content').text(article.content);
+        articleContentContainer.append(articleContent);
+        container.append(articleContentContainer);
+
+        $('.section-3').append(container);
+        container.fadeIn();
+
     }
     render(newsArray){
         console.log('the news.render function has this array...', newsArray)
@@ -51,14 +74,14 @@ class NewsApi {
         let ul = $('<ul>').addClass('news-list');
 
         for (let i = 0; i < arrLen; i++){
-            let li = $('<li>').addClass('news-item ' + i)
+            let li = $('<li>').addClass('news-item ' + (i+1))
                             .on('click', (event)=>{
-                                this.renderArticle(newsArray[i]);
+                                container.fadeOut(600, ()=>{ this.renderArticle(newsArray[i]) });
                             });
             li.text(newsArray[i].title);
             ul.append(li);
         }
-
         container.append(ul);
+        this.container = container;
     }
 }

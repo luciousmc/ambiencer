@@ -157,7 +157,7 @@ body {
     background-color: rgba(0, 0, 0, .5);
 }
 .section-content-container {
-    height: 70vh;
+    min-height: 70vh;
     background-color: firebrick;
 }
 #music ~ .section-content-container, #news ~ .section-content-container {
@@ -165,7 +165,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-#news-content-container {
+#news-content-container, #news-article-container {
     max-width: 75%;
     color: white;
     /* background-color: white; */
@@ -189,6 +189,26 @@ body {
     color: yellow;
     border-left-width: 15px;
 }
-.video-container, #news-content-container {
+#news-article-container {
+    display: none;
+}
+.article-image-container, .article-title-container, .article-content-container {
+    display: flex;
+    justify-content: center;
+}
+.article-image {
+    width: 30%;
+}
+.article-title {
+    font-size: 1.5em;
+}
+.article-content-container {
+    width: 60%;
+    margin: auto;
+}
+.article-content {
+    font-size: 1.4em;
+}
+.video-container, #news-content-container, #news-article-container {
     z-index: 1;
 }
