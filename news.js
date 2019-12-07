@@ -35,6 +35,15 @@ class NewsApi {
         const output = shared.randomize(this.moodVariations[mood]);
         return output;
     }
+    addEventHandlers(){
+        // click handler for back to news list
+
+        // click handler for go to full article
+    }
+    renderArticle(article){
+        // to be displayed when an article title is clicked
+        console.log('the article was clicked! ', article);
+    }
     render(newsArray){
         console.log('the news.render function has this array...', newsArray)
         const arrLen = newsArray.length;
@@ -42,7 +51,10 @@ class NewsApi {
         let ul = $('<ul>').addClass('news-list');
 
         for (let i = 0; i < arrLen; i++){
-            let li = $('<li>').addClass('news-item ' + i);
+            let li = $('<li>').addClass('news-item ' + i)
+                            .on('click', (event)=>{
+                                this.renderArticle(newsArray[i]);
+                            });
             li.text(newsArray[i].title);
             ul.append(li);
         }
