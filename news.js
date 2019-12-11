@@ -42,7 +42,8 @@ class NewsApi {
     }
     renderArticle(article){
         // to be displayed when an article title is clicked
-        console.log('the article was clicked! ', article);
+
+        // Article image
         let container = $('<div>').attr('id', 'news-article-container');
         let imgContainer = $('<div>').addClass('article-image-container');
         let articleImg = $('<img>').attr({
@@ -52,20 +53,32 @@ class NewsApi {
                                     });
         imgContainer.append(articleImg);
         container.append(imgContainer);
-
+        
+        // Article title
         let articleTitleContainer = $('<div>').addClass('article-title-container');
         let articleTitle = $('<h3>').addClass('article-title').text(article.title);
         articleTitleContainer.append(articleTitle);
         container.append(articleTitleContainer);
         
+        // Article preview text
         let articleContentContainer = $('<div>').addClass('article-content-container');
         let articleContent = $('<p>').addClass('article-content').text(article.content);
         articleContentContainer.append(articleContent);
         container.append(articleContentContainer);
-
+        
+        let navButtonContainer = $('<div>').addClass('nav-button-container');
+        let backButton = $('<button>').addClass('article-back-button')
+                                        .text('Back to List')
+                                        .on('click', (event)=>{
+                                            $(container).fadeOut(600, ()=>{
+                                                $('#news-content-container').fadeIn(600)
+                                            })
+                                        })
+        navButtonContainer.append(backButton);
+        container.append(navButtonContainer);
+        // Place the article container inside of section with a fade in effect
         $('.section-3').append(container);
         container.fadeIn();
-
     }
     render(newsArray){
         console.log('the news.render function has this array...', newsArray)
