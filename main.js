@@ -3,6 +3,7 @@ let clock = new Clock();
 let weather = new Weather();
 let music = new MusicPlayer(apiKeys);
 let images = new ImageApi(apiKeys);
+let news = new NewsApi(apiKeys);
 
 function startApp(){
     // SMOOTH SCROLLING 
@@ -32,12 +33,15 @@ function addEventListeners(){
         $('#main-page').fadeIn(700);
         $('#content-page').fadeOut(700);
         $('.video-container').empty();
+        $('#news-content-container').empty().show();
+        $('#news-article-container').remove();
     })
 }
 function switchMood (mood){
     generateHeaderText(mood);
     music.getMusic(mood);
     images.getImages(mood);
+    news.getNews(mood);
 }
 function generateHeaderText(mood){
     const musicHeader = $('#music h1');
