@@ -35,11 +35,6 @@ class NewsApi {
         const output = shared.randomize(this.moodVariations[mood]);
         return output;
     }
-    addEventHandlers(){
-        // click handler for back to news list
-
-        // click handler for go to full article
-    }
     renderArticle(article){
         // to be displayed when an article title is clicked
 
@@ -82,9 +77,7 @@ class NewsApi {
         let readArticleButton = $('<div>').addClass('read-article-button')
                                         .text('Read Full Article..')
                                         .on('click', (event)=>{
-                                            
-                                            
-                                            })
+                                            window.open(article.url, '_blank');                                            
                                         })
         readArticleContainer.append(readArticleButton);
         container.append(readArticleContainer);
