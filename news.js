@@ -66,16 +66,30 @@ class NewsApi {
         articleContentContainer.append(articleContent);
         container.append(articleContentContainer);
         
-        let navButtonContainer = $('<div>').addClass('nav-button-container');
-        let backButton = $('<button>').addClass('article-back-button')
+        let backButtonContainer = $('<div>').addClass('back-button-container');
+        let backButton = $('<div>').addClass('article-back-button')
                                         .text('Back to List')
                                         .on('click', (event)=>{
                                             $(container).fadeOut(600, ()=>{
                                                 $('#news-content-container').fadeIn(600)
                                             })
                                         })
-        navButtonContainer.append(backButton);
-        container.append(navButtonContainer);
+        backButtonContainer.append(backButton);
+        container.append(backButtonContainer);
+
+        // Button that takes user to full article when clicked
+        let readArticleContainer = $('<div>').addClass('read-article-button-container');
+        let readArticleButton = $('<div>').addClass('read-article-button')
+                                        .text('Read Full Article..')
+                                        .on('click', (event)=>{
+                                            
+                                            
+                                            })
+                                        })
+        readArticleContainer.append(readArticleButton);
+        container.append(readArticleContainer);
+
+
         // Place the article container inside of section with a fade in effect
         $('.section-3').append(container);
         container.fadeIn();

@@ -157,6 +157,7 @@ body {
     background-color: rgba(0, 0, 0, .5);
 }
 .section-content-container {
+    padding: 15px;
     min-height: 70vh;
     background-color: firebrick;
 }
@@ -208,6 +209,20 @@ body {
 }
 .article-content {
     font-size: 1.4em;
+}
+.back-button-container {
+    position: absolute;
+    left: 5%;
+    top: 15%;
+}
+.article-back-button, .read-article-button {
+    padding: 15px;
+    border: 1px solid white;
+}
+.article-back-button:hover, .read-article-button:hover {
+    background-color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    color: black;
 }
 .video-container, #news-content-container, #news-article-container {
     z-index: 1;
