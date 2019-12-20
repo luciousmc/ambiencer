@@ -17,7 +17,17 @@ class GifAPI {
             lang: 'en',
             q: this.makeQuery(mood)
         }
+        $.getJSON(this.endpoint, ajaxOptions)
+                .done((result)=>{
+                    console.log('the gif result object is: ', result);
+                })
+                .fail((err)=>{
+                    console.log('there was an error: ', err);
+                })
     }
-    makeQuery(mood){}
+    makeQuery(mood){
+        const output = shared.randomize(this.moodVariations[mood])
+        return output;
+    }
     render(){}
 }
