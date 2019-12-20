@@ -1,6 +1,6 @@
 class GifAPI {
     constructor(keys){
-        this.endpoint = 'api.giphy.com/v1/gifs/search'
+        this.endpoint = 'http://api.giphy.com/v1/gifs/search'
         this.apiKey = keys.gifs;
         this.moodVariations = {
             happy: ['happy', 'cheerful', 'laugh', 'smile'],
@@ -19,7 +19,9 @@ class GifAPI {
         }
         $.getJSON(this.endpoint, ajaxOptions)
                 .done((result)=>{
-                    console.log('the gif result object is: ', result);
+                    let gifToDisplay = shared.reduceResultByAmt(result.data, 1);
+                    gifToDisplay = gifToDisplay.images.original.url;
+                    this.render(gifToDisplay);
                 })
                 .fail((err)=>{
                     console.log('there was an error: ', err);
@@ -29,5 +31,13 @@ class GifAPI {
         const output = shared.randomize(this.moodVariations[mood])
         return output;
     }
-    render(){}
+    render(gif){
+        let container = $('#gif-content-container');
+        let img = $('<img>').attr({
+                                class: 'gif',
+                                src: gif,
+                                alt: 'Animated GIF'
+                            })
+        container.append(img);
+    }
 }

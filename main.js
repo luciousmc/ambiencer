@@ -36,6 +36,7 @@ function addEventListeners(){
         $('.video-container').empty();
         $('#news-content-container').empty().show();
         $('#news-article-container').remove();
+        $('#gif-content-container').empty();
     })
 }
 function switchMood (mood){

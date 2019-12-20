@@ -24,6 +24,9 @@ const shared = {
             const randI = Math.floor(Math.random() * arrLen);
             output.push(array.splice(randI,1)[0]);
         }
+        if (output.length === 1){
+            return output[0];
+        } 
         return output;
     }
 }
