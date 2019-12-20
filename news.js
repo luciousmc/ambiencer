@@ -88,7 +88,6 @@ class NewsApi {
         container.fadeIn();
     }
     render(newsArray){
-        console.log('the news.render function has this array...', newsArray)
         const arrLen = newsArray.length;
         let container = $('#news-content-container');
         let ul = $('<ul>').addClass('news-list');
