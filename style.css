@@ -148,7 +148,7 @@ body {
 .section-header h3 {
     margin: auto;
 }
-.section-1::after, .section-2::after, .section-3::after, .section-4::after{
+.section-1::before, .section-2::before, .section-3::before, .section-4::before{
     content: '';
     position: absolute;
     height: 100%;
@@ -171,6 +171,22 @@ body {
 .section-2 {
     flex-direction: column-reverse;
 }
+.loading-text, .poem-title {
+    color: white;
+}
+.poem-title-container {
+    display: none;
+}
+.poem-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+.poem-text {
+    font-size: 1.3rem;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 1px;
+}
 #poem-content-container {
     display: none;
     width: 75%;
@@ -179,6 +195,7 @@ body {
     max-height: 60vh;
     overflow-y: scroll;
     overflow-x: unset;
+    box-shadow: 0 0 5px burlywood;
 }
 #news-content-container, #news-article-container {
     max-width: 75%;
@@ -245,7 +262,7 @@ body {
     font-size: 1.2em;
     text-align: center;
 }
-.video-container, #news-content-container,
+.video-container, #news-content-container, .poem-title-container,
  #news-article-container, #gif-content-container, #poem-content-container {
     z-index: 1;
 }

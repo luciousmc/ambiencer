@@ -40,6 +40,7 @@ class PoemsAPI{
 
         let poemTitleContainer = $('<div>').addClass('poem-title-container');
         let poemTitle = $('<h3>').addClass('poem-title').text(poem.title);
+        poemTitle.after(`<p>by: ${poem.author}</p>`);
         poemTitleContainer.append(poemTitle);
         titleContainer.append(poemTitleContainer);
 
@@ -49,6 +50,7 @@ class PoemsAPI{
             poemTextContainer.append(poemText);
         }
         container.append(poemTextContainer);
-        container.fadeIn(500);
+        poemTitleContainer.fadeIn(600)
+        container.fadeIn(600);
     }
 }

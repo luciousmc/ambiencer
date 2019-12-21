@@ -40,6 +40,7 @@ class ImageApi {
                 .css({ 
                     'background-image': `url(${imageArray[i]})`,
                     'position': 'relative',
+                    'z-index:': '-2'
                 })       
         }
     }
