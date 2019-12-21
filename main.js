@@ -5,6 +5,7 @@ let music = new MusicPlayer(apiKeys);
 let images = new ImageApi(apiKeys);
 let news = new NewsApi(apiKeys);
 let gifs = new GifAPI(apiKeys);
+let poems = new PoemsAPI();
 
 function startApp(){
     // SMOOTH SCROLLING 
@@ -37,6 +38,8 @@ function addEventListeners(){
         $('#news-content-container').empty().show();
         $('#news-article-container').remove();
         $('#gif-content-container').empty();
+        $('#poem-content-container').empty();
+        $('.poem-title-container').empty();
     })
 }
 function switchMood (mood){
@@ -45,6 +48,7 @@ function switchMood (mood){
     images.getImages(mood);
     news.getNews(mood);
     gifs.getGifs(mood);
+    poems.getPoems(mood);
 }
 function generateHeaderText(mood){
     const musicHeader = $('#music h1');
