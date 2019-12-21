@@ -15,7 +15,6 @@ class PoemsAPI{
         const searchTerm = this.makeQuery(this.moodVariations[mood]);
        $.getJSON(this.endpoint + searchTerm)
                 .done((result)=>{
-                    console.log('the result of getPoems is: ', result);
                     const poemToDisplay = shared.randomize(result);
                     console.log('the poem to be displayed is: ', poemToDisplay);
                     this.render(poemToDisplay);
@@ -28,5 +27,21 @@ class PoemsAPI{
         let output = shared.randomize(mood);
         return output;
     }
-    render(){}
+    render(poem){
+        const arrLen = poem.lines.length;
+        let container = $('#poem-content-container');
+
+        let poemTitleContainer = $('<div>').addClass('poem-title-container');
+        let poemTitle = $('<h3>').addClass('poem-title').text(poem.title);
+        poemTitleContainer.append(poemTitle);
+        container.append(poemTitleContainer);
+
+        let poemTextContainer = $('<div>').addClass('poem-text-container');
+        for (let line = 0; line < arrLen; line++){
+            let poemText = $('<p>').addClass('poem-text').text(poem.lines[line]);
+            poemTextContainer.append(poemText);
+        }
+
+        container.append(poemTextContainer);
+    }
 }
