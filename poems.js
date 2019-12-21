@@ -1,6 +1,6 @@
 class PoemsAPI{
     constructor(){
-        this.endpoint = null;
+        this.endpoint = 'http://poetrydb.org/lines/';
         this.apiKey = null;
         this.moodVariations = {
             happy: ['happy', 'cheerful', 'laugh', 'smile'],
@@ -12,7 +12,18 @@ class PoemsAPI{
         }
     }
     getPoems(mood){
-        
+        const searchTerm = this.makeQuery(this.moodVariations[mood]);
+       $.getJSON(this.endpoint + searchTerm)
+                .done((result)=>{
+                    console.log('the result of getPoems is: ', result)
+                })
+                .fail((err)=>{
+                    console.log('sorry there was an error: ', err);
+                })
+    }
+    makeQuery(mood){
+        let output = shared.randomize(mood);
+        return output;
     }
     render(){}
 }
