@@ -15,7 +15,10 @@ class PoemsAPI{
         const searchTerm = this.makeQuery(this.moodVariations[mood]);
        $.getJSON(this.endpoint + searchTerm)
                 .done((result)=>{
-                    console.log('the result of getPoems is: ', result)
+                    console.log('the result of getPoems is: ', result);
+                    const poemToDisplay = shared.randomize(result);
+                    console.log('the poem to be displayed is: ', poemToDisplay);
+                    this.render(poemToDisplay);
                 })
                 .fail((err)=>{
                     console.log('sorry there was an error: ', err);
