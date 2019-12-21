@@ -168,11 +168,17 @@ body {
     justify-content: center;
     align-items: center;
 }
+.section-2 {
+    flex-direction: column-reverse;
+}
 #poem-content-container {
+    display: none;
     width: 75%;
     background-color: rgba(0,0,0,0.5);
     color: white;
-    overflow: scroll;
+    max-height: 60vh;
+    overflow-y: scroll;
+    overflow-x: unset;
 }
 #news-content-container, #news-article-container {
     max-width: 75%;

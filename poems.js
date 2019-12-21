@@ -12,9 +12,15 @@ class PoemsAPI{
         }
     }
     getPoems(mood){
+        let sectionContainer = $('.section-2');
+        let loadingText = $('<h1>').addClass('loading-text');
+        loadingText.text('Loading Poem...');
+        sectionContainer.append(loadingText);
+
         const searchTerm = this.makeQuery(this.moodVariations[mood]);
        $.getJSON(this.endpoint + searchTerm)
                 .done((result)=>{
+                    $(loadingText).fadeOut(300);
                     const poemToDisplay = shared.randomize(result);
                     console.log('the poem to be displayed is: ', poemToDisplay);
                     this.render(poemToDisplay);
@@ -29,19 +35,20 @@ class PoemsAPI{
     }
     render(poem){
         const arrLen = poem.lines.length;
+        let titleContainer = $('.section-2');
         let container = $('#poem-content-container');
 
         let poemTitleContainer = $('<div>').addClass('poem-title-container');
         let poemTitle = $('<h3>').addClass('poem-title').text(poem.title);
         poemTitleContainer.append(poemTitle);
-        container.append(poemTitleContainer);
+        titleContainer.append(poemTitleContainer);
 
         let poemTextContainer = $('<div>').addClass('poem-text-container');
         for (let line = 0; line < arrLen; line++){
             let poemText = $('<p>').addClass('poem-text').text(poem.lines[line]);
             poemTextContainer.append(poemText);
         }
-
         container.append(poemTextContainer);
+        container.fadeIn(500);
     }
 }
