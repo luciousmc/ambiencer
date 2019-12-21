@@ -38,6 +38,7 @@ function addEventListeners(){
         $('#news-content-container').empty().show();
         $('#news-article-container').remove();
         $('#gif-content-container').empty();
+        $('#poem-content-container').empty();
     })
 }
 function switchMood (mood){

@@ -163,8 +163,7 @@ body {
     min-height: 70vh;
     background-color: firebrick;
 }
-#music ~ .section-content-container, #news ~ .section-content-container,
- #gif ~ .section-content-container {
+.section-content-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,6 +171,8 @@ body {
 #poem-content-container {
     width: 75%;
     background-color: rgba(0,0,0,0.5);
+    color: white;
+    overflow: scroll;
 }
 #news-content-container, #news-article-container {
     max-width: 75%;
@@ -239,6 +240,6 @@ body {
     text-align: center;
 }
 .video-container, #news-content-container,
- #news-article-container, #gif-content-container, #poem-section-container {
+ #news-article-container, #gif-content-container, #poem-content-container {
     z-index: 1;
 }
