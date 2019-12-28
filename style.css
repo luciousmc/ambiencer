@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 #main-page {
-    background-image: url('http://imagebank.biz/wp-content/uploads/2014/02/76747.jpg');
+    background-image: url('images/morning.jpg');
     position: absolute;
     width: 100%;
     z-index: 11;
