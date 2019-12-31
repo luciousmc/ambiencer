@@ -10,11 +10,9 @@ body {
 .welcome-main-container {
     height: 75vh;
     color: white;
-    /* background-color: purple; */
 }
 .title-container {
     display: flex;
-    /* background-color: lightblue; */
     height: 40%;
     align-items: flex-end;
     padding-left: 10%;
@@ -23,7 +21,7 @@ body {
     position: relative;
     font-size: 5em;
     width: 75%;
-    text-shadow: 2px 2px 5px gray;
+    text-shadow: 2px 2px 5px black;
 }
 .title:after {
     position: absolute;
@@ -36,13 +34,18 @@ body {
 }
 .weather-box {
     align-self: flex-start;
-    /* background-color: white; */
     padding: 25px;
     text-align: center;
+    text-shadow: 1px 1px 5px black;
+}
+.weather-temp {
+    font-size: 3em;
+}
+.weather-location {
+    font-size: 1.2rem;
 }
 .time-container {
     display: flex;
-    /* background-color: lightcoral; */
     height: 50%;
     justify-content: center;
 }
@@ -66,7 +69,6 @@ body {
     margin: 0;
 }
 .button-header-container {
-    /* background-color: black; */
     display: flex;
     height: 10%;
     justify-content: center;
@@ -82,19 +84,24 @@ body {
     align-items: center;
     justify-content: center;
     height: 25vh;
-    /* background-color: red; */
 }
 .mood-button-container {
     display: flex;
     justify-content: space-around;
     width: 80%;
     height: 50%;
-    /* background-color: burlywood; */
 }
 .mood-button {
     width: 15%;
-    background-color: white;
+    background-color: beige;
     font-size: 2.2vw;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px black;
+    transition: .3s;
+}
+.mood-button:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
 }
 #content-page {
     display: none;
