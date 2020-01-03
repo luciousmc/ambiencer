@@ -114,20 +114,28 @@ body {
     z-index: 10;
 }
 .header-container h1 {
+    color: white;
     margin: auto;
     font-size: 3.5em;
-    text-align: center;
+    padding-left: 10%;
+    text-shadow: 1px 1px 5px black;
 }
 .header-container h3 {
     position: absolute;
-    top: 1%;
-    right: 2%;
-    width: 10%;
-    padding: 15px;
-    border: 2px solid white;
+    top: 0;
+    right: 3%;
+    font-size: 1.5em;
 }
-.header-container h3:hover {
-    background-color: whitesmoke;
+.current-mood {
+    letter-spacing: 3px;
+    margin-right: 8px;
+}
+.change-mood {
+    color: blue;
+    font-size: .8em;
+    text-decoration: underline;
+}
+.change-mood:hover {
     color: lightblue;
     cursor: pointer;
 }
