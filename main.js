@@ -43,6 +43,7 @@ function addEventListeners(){
     })
 }
 function switchMood (mood){
+    $('.back-to-main').text(`Current Mood: ${mood.toUpperCase()}`);
     generateHeaderText(mood);
     music.getMusic(mood);
     images.getImages(mood);
