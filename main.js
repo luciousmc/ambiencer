@@ -31,7 +31,7 @@ function addEventListeners(){
         $('#content-page').fadeIn(700);
     })
     // change mood click handler
-    $('.back-to-main').on('click', (event)=>{
+    $('.change-mood').on('click', (event)=>{
         $('#main-page').fadeIn(700);
         $('#content-page').fadeOut(700);
         $('.video-container').empty();
@@ -43,6 +43,7 @@ function addEventListeners(){
     })
 }
 function switchMood (mood){
+    $('.current-mood').html(`${mood.toUpperCase()}`);
     generateHeaderText(mood);
     music.getMusic(mood);
     images.getImages(mood);
