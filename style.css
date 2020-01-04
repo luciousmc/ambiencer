@@ -117,18 +117,19 @@ body {
     color: white;
     margin: auto;
     font-size: 3.5em;
-    padding-left: 10%;
+    padding-top: 1%;
+    padding-left: 5%;
     text-shadow: 1px 1px 5px black;
 }
 .header-container h3 {
     position: absolute;
-    top: 0;
+    top: 10%;
     right: 3%;
     font-size: 1.5em;
 }
 .current-mood {
-    letter-spacing: 3px;
     margin-right: 8px;
+    color: firebrick;
 }
 .change-mood {
     color: blue;
@@ -139,12 +140,36 @@ body {
     color: lightblue;
     cursor: pointer;
 }
+.header-container {
+    background: linear-gradient(to right, navy, white);
+}
 .header-container .menu {
     display: flex;
     justify-content: space-around;
+    margin: 12px 0 0;
+}
+.menu li {
+    list-style-type: none;
+    width: 25%;
+    text-align: center;
+    border-right:  2px solid black;
+}
+.menu li:last-child {
+    border-right: 0;
+}
+.menu {
+    padding: 0;
 }
 .menu a {
     display: block;
+    padding: 10px;
+    color: black;
+    font-size: 1.5em;
+    background: linear-gradient(white, gray);
+}
+.menu a:hover {
+    color: white;
+    background: linear-gradient(gray, white);
 }
 .section-container {
     position: relative;
