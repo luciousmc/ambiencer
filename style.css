@@ -301,4 +301,15 @@ body {
     z-index: 1;
 }
 
-@media screen and ()
+@media screen and (max-width: 1000px) {
+    .mood-button-container {
+        height: 65%;
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .mood-button {
+        width: 30%;
+        margin-bottom: 5px;
+        font-size: 3vw;
+    }
+}
