@@ -313,3 +313,27 @@ body {
         font-size: 3vw;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .title-container {
+        padding: 0;
+    }
+    .title {
+        width: auto;
+        margin: auto;
+        font-size: 7em;
+    }
+    .title:after {
+        font-size: 1.5rem;
+        left: 100px;
+    }
+    .weather-box {
+        display: none;
+    }
+    .clock {
+        font-size: 6em;
+    }
+    .mood-button {
+        font-size: 4vw;
+    }
+}
