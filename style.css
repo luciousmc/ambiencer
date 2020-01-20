@@ -112,7 +112,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 20vh;
+    min-height: 20vh;
     background: linear-gradient(to right, navy, white);
     z-index: 10;
 }
@@ -305,6 +305,7 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
+    /* MAIN PAGE  */
     .mood-button-container {
         height: 65%;
         width: 90%;
@@ -314,6 +315,21 @@ body {
         width: 30%;
         margin-bottom: 5px;
         font-size: 3vw;
+    }
+
+    /* CONTENT PAGE */
+    .header-container h1 {
+        font-size: 10vw;
+        margin: 0 auto 0 auto;
+    }
+    .header-container h3 {
+        position: relative;
+        font-size: 4vw;
+        margin: 0 auto 0 auto;
+    }
+    .menu a {
+        font-size: 4vw;
+        text-decoration: none;
     }
 }
 
