@@ -371,6 +371,22 @@ body {
         font-size: 3.5vw;
         margin-bottom: 30px;
     }
+    .article-image {
+        width: 65%;
+    }
+    .article-title {
+        font-size: 4vw;
+    }
+    .article-content-container {
+        width: 90%;
+    }
+    .article-content {
+        font-size: 3.5vw;
+    }
+    .back-button-container, .read-article-button-container {
+        width: 35%;
+        font-size: 2.7vw;
+    }
 }
 
 @media screen and (max-width: 700px) {

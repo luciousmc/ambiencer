@@ -78,7 +78,7 @@ class NewsApi {
         // Button that takes user to full article when clicked
         let readArticleContainer = $('<div>').addClass('read-article-button-container');
         let readArticleButton = $('<div>').addClass('read-article-button')
-                                        .text('Read Full Article..')
+                                        .text('Read Full Article')
                                         .on('click', (event)=>{
                                             window.open(article.url, '_blank');                                            
                                         })
