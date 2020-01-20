@@ -306,6 +306,29 @@ body {
 
 @media screen and (max-width: 1000px) {
     /* MAIN PAGE  */
+    .title {
+        font-size: 12vw;
+        margin: 0;
+        align-self: center;
+    }
+    .title:after {
+        font-size: 3vw;
+    }
+    .weather-temp {
+        font-size: 5vw;
+    }
+    .weather-location {
+        font-size: 3vw;
+    }
+    .clock {
+        font-size: 15vw;
+    }
+    .greeting {
+        font-size: 7vw;
+    }
+    .mood-text {
+        font-size: 7vw;
+    }
     .mood-button-container {
         height: 65%;
         width: 90%;
@@ -314,7 +337,7 @@ body {
     .mood-button {
         width: 30%;
         margin-bottom: 5px;
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     /* CONTENT PAGE */

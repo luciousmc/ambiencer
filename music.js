@@ -77,8 +77,8 @@ class MusicPlayer {
         let iFrame = $('<iframe>');
         iFrame.attr({
             type: 'text/html',
-            width: 640,
-            height: 360,
+            width: 720,
+            height: 405,
             src: `${yt_baseURL}${yt_options}`,
             frameborder: 0,
             allow: 'encrypted-media; accelerometer; gyroscope;'
