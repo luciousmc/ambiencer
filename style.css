@@ -321,9 +321,10 @@ body {
     .title {
         width: auto;
         margin: auto;
-        font-size: 7em;
+        font-size: 17vw;
     }
     .title:after {
+        display:none;
         font-size: 1.5rem;
         left: 100px;
     }
@@ -333,7 +334,44 @@ body {
     .clock {
         font-size: 6em;
     }
+    .mood-text {
+        font-size: 8vw;
+    }
     .mood-button {
-        font-size: 4vw;
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .clock {
+        font-size: 18vw;
+    }
+    .greeting {
+        font-size: 10vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .welcome-main-container {
+        height: 70vh;
+    }
+    .title {
+        font-size: 20vw;
+    }
+    .js-clock {
+        justify-content: center;
+    }
+    .mood-bar {
+        height: 30vh;
+    }
+    .mood-button-container {
+        height: 90%;
+    }
+    .mood-button {
+        width: 45%;
+        font-size: 6.5vw;
+    }
+    .mood-text {
+        font-size: 10vw;
     }
 }
