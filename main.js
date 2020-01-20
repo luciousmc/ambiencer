@@ -62,37 +62,37 @@ function generateHeaderText(mood){
             musicHeader.text('Lift your spirit with a song');
             poemHeader.text('Think happy thoughts');
             newsHeader.text('Get some heartwarming news');
-            gifHeader.text('Here\'s a GIF to put a smile on your face');
+            gifHeader.text('Smile!');
             break;
         case 'sad':
             musicHeader.text('Let the floodgates open..');
-            poemHeader.text('Let\'s go deep into the burrows of your heart');
-            newsHeader.text('Some stories sure to tug the heartstrings');
+            poemHeader.text('Deep into the burrows of your heart');
+            newsHeader.text('Stories sure to tug the heartstrings');
             gifHeader.text('And a lonely GIF');
             break;
         case 'chill':
-            musicHeader.text('Relax your mind with some smooth beats');
-            poemHeader.text('Grab a cup o\' joe and have a seat');
+            musicHeader.text('Relax your mind');
+            poemHeader.text('Grab a cup o\' joe');
             newsHeader.text('Some casual reading for you');
-            gifHeader.text('How about a GIF from us to you, friend. -_o');
+            gifHeader.text('A GIF from us to you, friend. -_o');
             break;
         case 'hype':
             musicHeader.text('Let\'s get the party started..');
-            poemHeader.text('Legit poems to check out. Cop it, yo');
+            poemHeader.text('Legit poems to check out');
             newsHeader.text('What\'s poppin\' in the news');
-            gifHeader.text('');
+            gifHeader.text('Yeet');
             break;
         case 'romantic':
             musicHeader.text('Set the mood right with a song');
             poemHeader.text('My cherie, amour');
-            newsHeader.text('Love is in the air. Check out these stories');
+            newsHeader.text('Love is in the air');
             gifHeader.text('And Somthin\' special');
             break;
         case 'motivated':
             musicHeader.text('Get pumped up');
             poemHeader.text('Find inspiration from your soul');
-            newsHeader.text('Some articles to get you motivated');
-            gifHeader.text('');
+            newsHeader.text('Articles to motivate');
+            gifHeader.text('Do work');
             break;
         default:
             break;
