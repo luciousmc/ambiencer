@@ -126,18 +126,22 @@ body {
 }
 .header-container h3 {
     position: absolute;
+    color: silver;
+    text-shadow: 1px 1px 1px black;
     top: 10%;
     right: 3%;
     font-size: 1.5em;
 }
 .current-mood {
     margin-right: 8px;
-    color: firebrick;
+    color: chartreuse;
+    text-shadow: 1px 1px 1px black;
 }
 .change-mood {
     color: blue;
     font-size: .8em;
     text-decoration: underline;
+    text-shadow: none;
 }
 .change-mood:hover {
     color: lightblue;
@@ -357,6 +361,7 @@ iframe {
     .header-container h1 {
         font-size: 10vw;
         margin: 0 auto 0 auto;
+        padding: 0;
     }
     .header-container h3 {
         position: relative;
@@ -434,7 +439,7 @@ iframe {
         font-size: 14vw;
     }
     .header-container h3 {
-        font-size: 6vw;
+        font-size: 5vw;
     }
     .menu a {
         font-size: 5vw;
@@ -453,6 +458,31 @@ iframe {
     }
     .poem-text {
         font-size: 5vw;
+    }
+    #news-content-container {
+        width: 85%;
+    }
+    #news-article-container {
+        width: 90%;
+    }
+    .news-list li {
+        font-size: 5vw;
+    }
+    .article-image {
+        width: 80%;
+    }
+    .article-title {
+        font-size: 5.5vw;
+    }
+    .article-content-container {
+        width: 100%;
+    }
+    .article-content {
+        font-size: 5vw;
+    }
+    .back-button-container, .read-article-button-container {
+        font-size: 4vw;
+        width: 45%;
     }
 }
 
