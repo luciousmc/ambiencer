@@ -86,7 +86,7 @@ function generateHeaderText(mood){
             musicHeader.text('Set the mood right with a song');
             poemHeader.text('My cherie, amour');
             newsHeader.text('Love is in the air. Check out these stories');
-            gifHeader.text('');
+            gifHeader.text('And Somthin\' special');
             break;
         case 'motivated':
             musicHeader.text('Get pumped up');
