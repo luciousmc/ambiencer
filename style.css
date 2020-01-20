@@ -205,6 +205,14 @@ body {
     min-height: 70vh;
     background-color: firebrick;
 }
+/* VIDEO SECION  */
+.video-container {
+    width: 60%;
+}
+iframe {
+    width: 100%;
+}
+/* POEM SECTION  */
 .section-2 {
     flex-direction: column-reverse;
 }
@@ -234,6 +242,8 @@ body {
     overflow-x: unset;
     box-shadow: 0 0 5px burlywood;
 }
+
+/* NEWS SECTION  */
 #news-content-container, #news-article-container {
     max-width: 75%;
     color: white;
@@ -360,6 +370,9 @@ body {
     .section-header h1 {
         font-size: 4vw;
     }
+    .video-container {
+        width: 80%;
+    }
     .poem-title {
         font-size: 5vw;
         text-decoration: underline;
@@ -390,6 +403,7 @@ body {
 }
 
 @media screen and (max-width: 700px) {
+    /* MAIN PAGE  */
     .title-container {
         padding: 0;
     }
@@ -414,6 +428,10 @@ body {
     }
     .mood-button {
         font-size: 4.5vw;
+    }
+    /* CONTENT PAGE  */
+    .video-container {
+        width: 80%;
     }
 }
 
