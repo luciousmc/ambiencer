@@ -18,14 +18,14 @@ body {
 }
 .title {
     position: relative;
-    font-size: 5em;
+    font-size: 9vw;
     width: 75%;
     text-shadow: 2px 2px 5px black;
 }
 .title:after {
     position: absolute;
     content: 'The best way to set the mood';
-    font-size: 1.2rem;
+    font-size: 2vw;
     font-family: helvetica;
     font-style: italic;
     left: 29px;
@@ -38,10 +38,12 @@ body {
     text-shadow: 1px 1px 5px black;
 }
 .weather-temp {
-    font-size: 3em;
+    font-size: 5vw;
+    margin: 15% 0 0 0;
 }
 .weather-location {
     font-size: 1.2rem;
+    margin: 0;
 }
 .time-container {
     display: flex;
@@ -108,6 +110,7 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     height: 20vh;
     background: linear-gradient(to right, navy, white);
