@@ -357,6 +357,13 @@ body {
     .section-header h1 {
         font-size: 4vw;
     }
+    .poem-title {
+        font-size: 5vw;
+        text-decoration: underline;
+    }
+    .poem-text {
+        font-size: 4vw;
+    }
 }
 
 @media screen and (max-width: 700px) {
