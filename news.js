@@ -60,6 +60,9 @@ class NewsApi {
         let articleContent = $('<p>').addClass('article-content').text(article.content);
         articleContentContainer.append(articleContent);
         container.append(articleContentContainer);
+
+        let buttonsContainer = $('<div>').addClass('buttons-container');
+        container.append(buttonsContainer);
         
         let backButtonContainer = $('<div>').addClass('back-button-container');
         let backButton = $('<div>').addClass('article-back-button')
@@ -70,7 +73,7 @@ class NewsApi {
                                             })
                                         })
         backButtonContainer.append(backButton);
-        container.append(backButtonContainer);
+        buttonsContainer.append(backButtonContainer);
 
         // Button that takes user to full article when clicked
         let readArticleContainer = $('<div>').addClass('read-article-button-container');
@@ -80,7 +83,7 @@ class NewsApi {
                                             window.open(article.url, '_blank');                                            
                                         })
         readArticleContainer.append(readArticleButton);
-        container.append(readArticleContainer);
+        buttonsContainer.append(readArticleContainer);
 
 
         // Place the article container inside of section with a fade in effect

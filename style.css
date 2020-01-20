@@ -278,15 +278,19 @@ body {
 .article-content {
     font-size: 1.4em;
 }
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .back-button-container {
-    position: absolute;
-    left: 5%;
-    top: 15%;
+    width: 25%;
     font-size: 1.2em;
 }
 .article-back-button, .read-article-button {
     padding: 15px;
     border: 1px solid white;
+    text-align: center;
 }
 .article-back-button:hover, .read-article-button:hover {
     background-color: rgba(255, 255, 255, .5);
@@ -295,9 +299,8 @@ body {
 }
 .read-article-button-container {
     width: 25%;
-    margin: auto;
     font-size: 1.2em;
-    text-align: center;
+    justify-self: right;
 }
 .video-container, #news-content-container, .poem-title-container,
  #news-article-container, #gif-content-container, #poem-content-container {
@@ -363,6 +366,10 @@ body {
     }
     .poem-text {
         font-size: 4vw;
+    }
+    .news-list li {
+        font-size: 3.5vw;
+        margin-bottom: 30px;
     }
 }
 
