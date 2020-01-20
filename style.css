@@ -18,7 +18,7 @@ body {
 }
 .title {
     position: relative;
-    font-size: 9vw;
+    font-size: 7vw;
     width: 75%;
     text-shadow: 2px 2px 5px black;
 }
@@ -38,7 +38,7 @@ body {
     text-shadow: 1px 1px 5px black;
 }
 .weather-temp {
-    font-size: 5vw;
+    font-size: 4vw;
     margin: 15% 0 0 0;
 }
 .weather-location {
@@ -60,11 +60,11 @@ body {
     text-shadow: 2px 2px 5px black;
 }
 .clock {
-    font-size: 7em;
+    font-size: 8vw;
     margin: 0;
 }
 .greeting {
-    font-size: 3em;
+    font-size: 4vw;
     font-weight: bold;
     margin: 0;
 }
@@ -76,7 +76,7 @@ body {
 }
 .mood-text {
     font-family: Times;
-    font-size: 3em;
+    font-size: 5vw;
     margin: 0;
 }
 .mood-bar {
