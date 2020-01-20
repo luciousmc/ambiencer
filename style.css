@@ -430,11 +430,29 @@ iframe {
         font-size: 4.5vw;
     }
     /* CONTENT PAGE  */
+    .header-container h1 {
+        font-size: 14vw;
+    }
+    .header-container h3 {
+        font-size: 6vw;
+    }
+    .menu a {
+        font-size: 5vw;
+    }
     .section-header h1 {
         font-size: 5.5vw;
     }
     .video-container {
         width: 80%;
+    }
+    .poem-title {
+        font-size: 6vw;
+    }
+    #poem-content-container {
+        width: 95%;
+    }
+    .poem-text {
+        font-size: 5vw;
     }
 }
 
