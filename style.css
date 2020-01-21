@@ -558,4 +558,28 @@ iframe {
     .news-list li:hover {
         border-left-width: 2px;
     }
+    .article-image {
+        width: 90%;
+    }
+    .article-title {
+        font-size: 6.5vw;
+    }
+    .article-content {
+        font-size: 6vw;
+    }
+    .buttons-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .back-button-container, .read-article-button-container {
+        width: 80%;
+        margin-bottom: 10px;
+        font-size: 6vw;
+    }
+    .read-article-button-container {
+        order: 1;
+    }
+    .back-button-container {
+        order: 2;
+    }
 }
