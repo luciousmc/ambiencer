@@ -530,6 +530,9 @@ iframe {
     .menu a {
         font-size: 6vw;
     }
+    .section-container {
+        top: 25vh;
+    }
     /* POEM SECTION  */
     .poem-title {
         font-size: 7vw;
