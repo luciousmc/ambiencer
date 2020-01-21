@@ -496,6 +496,7 @@ iframe {
 }
 
 @media screen and (max-width: 400px) {
+    /* MAIN PAGE  */
     .welcome-main-container {
         height: 70vh;
     }
@@ -517,5 +518,44 @@ iframe {
     }
     .mood-text {
         font-size: 10vw;
+    }
+    /* CONTENT PAGE  */
+    .header-container h3 {
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .change-mood {
+        font-size: 7vw;
+    }
+    .menu a {
+        font-size: 6vw;
+    }
+    /* POEM SECTION  */
+    .poem-title {
+        font-size: 7vw;
+    }
+    .poem-text {
+        font-size: 5.5vw;
+    }
+    /* NEWS SECTION  */
+    .news-list {
+        counter-reset: news-item-counter;
+    }
+    .news-list li {
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .news-list li:before {
+        content: counter(news-item-counter);
+        counter-increment: news-item-counter;
+        position: absolute;
+        height: 100%;
+        width: 10%;
+        top: 0;
+        left: -30px;
+        font-size: 8vw;
+    }
+    .news-list li:hover {
+        border-left-width: 2px;
     }
 }
