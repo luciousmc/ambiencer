@@ -26,7 +26,7 @@ class Clock {
         $('.greeting').text(greeting);
     }
     setGreeting(){
-        let page = $('#main-page');
+        let page = $('body');
         switch(this.hours){
             case 1:
             case 2:

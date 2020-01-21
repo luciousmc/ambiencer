@@ -2,7 +2,6 @@ body {
     margin: 0;
 }
 #main-page {
-    background-image: url('images/morning.jpg');
     position: absolute;
     width: 100%;
     z-index: 11;
@@ -19,14 +18,14 @@ body {
 }
 .title {
     position: relative;
-    font-size: 5em;
+    font-size: 7vw;
     width: 75%;
     text-shadow: 2px 2px 5px black;
 }
 .title:after {
     position: absolute;
     content: 'The best way to set the mood';
-    font-size: 1.2rem;
+    font-size: 2vw;
     font-family: helvetica;
     font-style: italic;
     left: 29px;
@@ -39,10 +38,12 @@ body {
     text-shadow: 1px 1px 5px black;
 }
 .weather-temp {
-    font-size: 3em;
+    font-size: 4vw;
+    margin: 15% 0 0 0;
 }
 .weather-location {
     font-size: 1.2rem;
+    margin: 0;
 }
 .time-container {
     display: flex;
@@ -53,7 +54,6 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 50%;
 }
 .clock, .greeting, .mood-text {
     color: white;
@@ -64,7 +64,7 @@ body {
     margin: 0;
 }
 .greeting {
-    font-size: 3.5vw;
+    font-size: 4vw;
     font-weight: bold;
     margin: 0;
 }
@@ -76,7 +76,7 @@ body {
 }
 .mood-text {
     font-family: Times;
-    font-size: 3.5vw;
+    font-size: 5vw;
     margin: 0;
 }
 .mood-bar {
@@ -108,14 +108,17 @@ body {
 }
 .header-container {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    height: 20vh;
-    background-color: orange;
+    min-height: 20vh;
+    background: linear-gradient(to right, navy, white);
     z-index: 10;
 }
 .header-container h1 {
+    margin: 0;
     color: white;
-    margin: auto;
     font-size: 3.5em;
     padding-top: 1%;
     padding-left: 5%;
@@ -123,30 +126,33 @@ body {
 }
 .header-container h3 {
     position: absolute;
+    color: silver;
+    text-shadow: 1px 1px 1px black;
     top: 10%;
     right: 3%;
     font-size: 1.5em;
 }
 .current-mood {
     margin-right: 8px;
-    color: firebrick;
+    color: chartreuse;
+    text-shadow: 1px 1px 1px black;
 }
 .change-mood {
     color: blue;
     font-size: .8em;
     text-decoration: underline;
+    text-shadow: none;
 }
 .change-mood:hover {
     color: lightblue;
     cursor: pointer;
 }
-.header-container {
-    background: linear-gradient(to right, navy, white);
-}
 .header-container .menu {
     display: flex;
     justify-content: space-around;
+    justify-self: flex-end;
     margin: 12px 0 0;
+    padding: 0;
 }
 .menu li {
     list-style-type: none;
@@ -156,9 +162,6 @@ body {
 }
 .menu li:last-child {
     border-right: 0;
-}
-.menu {
-    padding: 0;
 }
 .menu a {
     display: block;
@@ -199,15 +202,21 @@ body {
     background-color: rgba(0, 0, 0, .5);
 }
 .section-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     min-height: 70vh;
     background-color: firebrick;
 }
-.section-content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* VIDEO SECION  */
+.video-container {
+    width: 60%;
 }
+iframe {
+    width: 100%;
+}
+/* POEM SECTION  */
 .section-2 {
     flex-direction: column-reverse;
 }
@@ -237,6 +246,8 @@ body {
     overflow-x: unset;
     box-shadow: 0 0 5px burlywood;
 }
+
+/* NEWS SECTION  */
 #news-content-container, #news-article-container {
     max-width: 75%;
     color: white;
@@ -281,15 +292,19 @@ body {
 .article-content {
     font-size: 1.4em;
 }
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .back-button-container {
-    position: absolute;
-    left: 5%;
-    top: 15%;
+    width: 25%;
     font-size: 1.2em;
 }
 .article-back-button, .read-article-button {
     padding: 15px;
     border: 1px solid white;
+    text-align: center;
 }
 .article-back-button:hover, .read-article-button:hover {
     background-color: rgba(255, 255, 255, .5);
@@ -298,11 +313,276 @@ body {
 }
 .read-article-button-container {
     width: 25%;
-    margin: auto;
     font-size: 1.2em;
-    text-align: center;
+    justify-self: right;
 }
 .video-container, #news-content-container, .poem-title-container,
  #news-article-container, #gif-content-container, #poem-content-container {
     z-index: 1;
+}
+
+@media screen and (max-width: 1000px) {
+    /* MAIN PAGE  */
+    .title {
+        font-size: 12vw;
+        margin: 0;
+        align-self: center;
+    }
+    .title:after {
+        font-size: 3vw;
+    }
+    .weather-temp {
+        font-size: 5vw;
+    }
+    .weather-location {
+        font-size: 3vw;
+    }
+    .clock {
+        font-size: 15vw;
+    }
+    .greeting {
+        font-size: 7vw;
+    }
+    .mood-text {
+        font-size: 7vw;
+    }
+    .mood-button-container {
+        height: 65%;
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .mood-button {
+        width: 30%;
+        margin-bottom: 5px;
+        font-size: 4vw;
+    }
+
+    /* CONTENT PAGE */
+    .header-container h1 {
+        font-size: 10vw;
+        margin: 0 auto 0 auto;
+        padding: 0;
+    }
+    .header-container h3 {
+        position: relative;
+        font-size: 4vw;
+        margin: 0 auto 0 auto;
+    }
+    .menu a {
+        font-size: 4vw;
+        text-decoration: none;
+    }
+    .section-header h1 {
+        font-size: 4vw;
+    }
+    .video-container {
+        width: 80%;
+    }
+    .poem-title {
+        font-size: 5vw;
+        text-decoration: underline;
+    }
+    .poem-text {
+        font-size: 4vw;
+    }
+    .news-list li {
+        font-size: 3.5vw;
+        margin-bottom: 30px;
+    }
+    .article-image {
+        width: 65%;
+    }
+    .article-title {
+        font-size: 4.5vw;
+    }
+    .article-content-container {
+        width: 90%;
+    }
+    .article-content {
+        font-size: 3.5vw;
+    }
+    .back-button-container, .read-article-button-container {
+        width: 35%;
+        font-size: 2.7vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    /* MAIN PAGE  */
+    .title-container {
+        padding: 0;
+    }
+    .title {
+        width: auto;
+        margin: auto;
+        font-size: 17vw;
+    }
+    .title:after {
+        display:none;
+        font-size: 1.5rem;
+        left: 100px;
+    }
+    .weather-box {
+        display: none;
+    }
+    .clock {
+        font-size: 6em;
+    }
+    .mood-text {
+        font-size: 8vw;
+    }
+    .mood-button {
+        font-size: 4.5vw;
+    }
+    /* CONTENT PAGE  */
+    .header-container h1 {
+        font-size: 14vw;
+    }
+    .header-container h3 {
+        font-size: 5vw;
+    }
+    .menu a {
+        font-size: 5vw;
+    }
+    .section-header h1 {
+        font-size: 5.5vw;
+    }
+    .video-container {
+        width: 80%;
+    }
+    .poem-title {
+        font-size: 6vw;
+    }
+    #poem-content-container {
+        width: 95%;
+    }
+    .poem-text {
+        font-size: 5vw;
+    }
+    #news-content-container {
+        width: 85%;
+    }
+    #news-article-container {
+        width: 90%;
+    }
+    .news-list li {
+        font-size: 5vw;
+    }
+    .article-image {
+        width: 80%;
+    }
+    .article-title {
+        font-size: 5.5vw;
+    }
+    .article-content-container {
+        width: 100%;
+    }
+    .article-content {
+        font-size: 5vw;
+    }
+    .back-button-container, .read-article-button-container {
+        font-size: 4vw;
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .clock {
+        font-size: 18vw;
+    }
+    .greeting {
+        font-size: 10vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* MAIN PAGE  */
+    .welcome-main-container {
+        height: 70vh;
+    }
+    .title {
+        font-size: 20vw;
+    }
+    .js-clock {
+        justify-content: center;
+    }
+    .mood-bar {
+        height: 30vh;
+    }
+    .mood-button-container {
+        height: 90%;
+    }
+    .mood-button {
+        width: 45%;
+        font-size: 6.5vw;
+    }
+    .mood-text {
+        font-size: 10vw;
+    }
+    /* CONTENT PAGE  */
+    .header-container h3 {
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .change-mood {
+        font-size: 7vw;
+    }
+    .menu a {
+        font-size: 6vw;
+    }
+    .section-container {
+        top: 25vh;
+    }
+    /* POEM SECTION  */
+    .poem-title {
+        font-size: 7vw;
+    }
+    .poem-text {
+        font-size: 5.5vw;
+    }
+    /* NEWS SECTION  */
+    .news-list {
+        counter-reset: news-item-counter;
+    }
+    .news-list li {
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .news-list li:before {
+        content: counter(news-item-counter);
+        counter-increment: news-item-counter;
+        position: absolute;
+        height: 100%;
+        width: 10%;
+        top: 0;
+        left: -30px;
+        font-size: 8vw;
+    }
+    .news-list li:hover {
+        border-left-width: 2px;
+    }
+    .article-image {
+        width: 90%;
+    }
+    .article-title {
+        font-size: 6.5vw;
+    }
+    .article-content {
+        font-size: 6vw;
+    }
+    .buttons-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .back-button-container, .read-article-button-container {
+        width: 80%;
+        margin-bottom: 10px;
+        font-size: 6vw;
+    }
+    .read-article-button-container {
+        order: 1;
+    }
+    .back-button-container {
+        order: 2;
+    }
 }
