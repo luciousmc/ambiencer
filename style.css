@@ -521,7 +521,7 @@ iframe {
     }
     /* CONTENT PAGE  */
     .header-container h3 {
-        font-size: 6vw;
+        font-size: 5vw;
         margin-bottom: 10px;
     }
     .change-mood {
@@ -584,5 +584,8 @@ iframe {
     }
     .back-button-container {
         order: 2;
+    }
+    .gif {
+        width: 90%;
     }
 }
