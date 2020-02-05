@@ -1,5 +1,21 @@
 body {
     margin: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main {
+    position: relative;
+}
+main:before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 #main-page {
     position: absolute;
@@ -18,14 +34,14 @@ body {
 }
 .title {
     position: relative;
-    font-size: 7vw;
+    font-size: 7vmax;
     width: 75%;
     text-shadow: 2px 2px 5px black;
 }
 .title:after {
     position: absolute;
     content: 'The best way to set the mood';
-    font-size: 2vw;
+    font-size: 2vmax;
     font-family: helvetica;
     font-style: italic;
     left: 29px;
@@ -38,11 +54,11 @@ body {
     text-shadow: 1px 1px 5px black;
 }
 .weather-temp {
-    font-size: 4vw;
+    font-size: 4.5vmax;
     margin: 15% 0 0 0;
 }
 .weather-location {
-    font-size: 1.2rem;
+    font-size: 2vmax;
     margin: 0;
 }
 .time-container {
@@ -60,11 +76,11 @@ body {
     text-shadow: 2px 2px 5px black;
 }
 .clock {
-    font-size: 8vw;
+    font-size: 7.5vmax;
     margin: 0;
 }
 .greeting {
-    font-size: 4vw;
+    font-size: 3.5vmax;
     font-weight: bold;
     margin: 0;
 }
@@ -76,7 +92,7 @@ body {
 }
 .mood-text {
     font-family: Times;
-    font-size: 5vw;
+    font-size: 4vmax;
     margin: 0;
 }
 .mood-bar {
@@ -88,13 +104,13 @@ body {
 .mood-button-container {
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 90%;
     height: 50%;
 }
 .mood-button {
     width: 15%;
     background-color: beige;
-    font-size: 2.2vw;
+    font-size: 2.5vmax;
     border-radius: 20px;
     box-shadow: 1px 1px 5px black;
     transition: .3s;
@@ -119,18 +135,18 @@ body {
 .header-container h1 {
     margin: 0;
     color: white;
-    font-size: 3.5em;
+    font-size: 9vmin;
     padding-top: 1%;
     padding-left: 5%;
     text-shadow: 1px 1px 5px black;
 }
 .header-container h3 {
     position: absolute;
-    color: silver;
+    color: burlywood;
     text-shadow: 1px 1px 1px black;
-    top: 10%;
+    top: 15%;
     right: 3%;
-    font-size: 1.5em;
+    font-size: 5vmin;
 }
 .current-mood {
     margin-right: 8px;
@@ -241,9 +257,7 @@ iframe {
     width: 75%;
     background-color: rgba(0,0,0,0.5);
     color: white;
-    max-height: 60vh;
-    overflow-y: scroll;
-    overflow-x: unset;
+    min-height: 60vh;
     box-shadow: 0 0 5px burlywood;
 }
 
@@ -320,90 +334,89 @@ iframe {
  #news-article-container, #gif-content-container, #poem-content-container {
     z-index: 1;
 }
+.gif {
+    width:100%;
+}
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1025px) {
     /* MAIN PAGE  */
     .title {
-        font-size: 12vw;
+        font-size: 12vmin;
         margin: 0;
         align-self: center;
     }
     .title:after {
-        font-size: 3vw;
+        font-size: 3vmin;
     }
     .weather-temp {
-        font-size: 5vw;
+        font-size: 5vmin;
     }
     .weather-location {
-        font-size: 3vw;
+        font-size: 3vmin;
     }
     .clock {
-        font-size: 15vw;
+        font-size: 15vmin;
     }
     .greeting {
-        font-size: 7vw;
+        font-size: 7vmin;
     }
     .mood-text {
-        font-size: 7vw;
+        font-size: 7vmin;
     }
     .mood-button-container {
-        height: 65%;
+        height: 80%;
         width: 90%;
         flex-wrap: wrap;
     }
     .mood-button {
         width: 30%;
         margin-bottom: 5px;
-        font-size: 4vw;
+        font-size: 4vmin;
     }
 
     /* CONTENT PAGE */
     .header-container h1 {
-        font-size: 10vw;
-        margin: 0 auto 0 auto;
-        padding: 0;
+        font-size: 10vmin;
     }
     .header-container h3 {
-        position: relative;
-        font-size: 4vw;
-        margin: 0 auto 0 auto;
+        font-size: 4vmin;
     }
     .menu a {
-        font-size: 4vw;
+        font-size: 4vmin;
         text-decoration: none;
     }
     .section-header h1 {
-        font-size: 4vw;
+        font-size: 4vmin;
     }
     .video-container {
         width: 80%;
     }
     .poem-title {
-        font-size: 5vw;
+        font-size: 5vmin;
         text-decoration: underline;
     }
     .poem-text {
-        font-size: 4vw;
+        font-size: 4vmin;
     }
     .news-list li {
-        font-size: 3.5vw;
+        font-size: 3.5vmin;
         margin-bottom: 30px;
     }
     .article-image {
         width: 65%;
     }
     .article-title {
-        font-size: 4.5vw;
+        font-size: 4.5vmin;
     }
     .article-content-container {
         width: 90%;
     }
     .article-content {
-        font-size: 3.5vw;
+        font-size: 3.5vmin;
     }
     .back-button-container, .read-article-button-container {
         width: 35%;
-        font-size: 2.7vw;
+        font-size: 2.7vmin;
     }
 }
 
@@ -415,7 +428,7 @@ iframe {
     .title {
         width: auto;
         margin: auto;
-        font-size: 17vw;
+        font-size: 17vmin;
     }
     .title:after {
         display:none;
@@ -426,38 +439,46 @@ iframe {
         display: none;
     }
     .clock {
-        font-size: 6em;
+        font-size: 18vmin;
     }
     .mood-text {
-        font-size: 8vw;
+        font-size: 8vmin;
     }
     .mood-button {
-        font-size: 4.5vw;
+        font-size: 5vmin;
     }
     /* CONTENT PAGE  */
     .header-container h1 {
-        font-size: 14vw;
+        font-size: 9vmin;
     }
     .header-container h3 {
-        font-size: 5vw;
+        font-size: 5vmin;
+        margin: 0;
+    }
+    .change-mood {
+        font-size: 5.5vmin;
+    }
+    .header-container .menu {
+        margin: 0;
     }
     .menu a {
-        font-size: 5vw;
+        font-size: 4vmin;
+        padding: 6px;
     }
     .section-header h1 {
-        font-size: 5.5vw;
+        font-size: 5.5vmin;
     }
     .video-container {
         width: 80%;
     }
     .poem-title {
-        font-size: 6vw;
+        font-size: 6vmin;
     }
     #poem-content-container {
         width: 95%;
     }
     .poem-text {
-        font-size: 5vw;
+        font-size: 5vmin;
     }
     #news-content-container {
         width: 85%;
@@ -466,42 +487,45 @@ iframe {
         width: 90%;
     }
     .news-list li {
-        font-size: 5vw;
+        font-size: 5vmin;
     }
     .article-image {
         width: 80%;
     }
     .article-title {
-        font-size: 5.5vw;
+        font-size: 5.5vmin;
     }
     .article-content-container {
         width: 100%;
     }
     .article-content {
-        font-size: 5vw;
+        font-size: 5vmin;
     }
     .back-button-container, .read-article-button-container {
-        font-size: 4vw;
+        font-size: 4vmin;
         width: 45%;
+    }
+    #gif-content-container {
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 550px) {
     .clock {
-        font-size: 18vw;
+        font-size: 18vmin;
     }
     .greeting {
-        font-size: 10vw;
+        font-size: 10vmin;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
     /* MAIN PAGE  */
     .welcome-main-container {
         height: 70vh;
     }
     .title {
-        font-size: 20vw;
+        font-size: 20vmin;
     }
     .js-clock {
         justify-content: center;
@@ -514,31 +538,34 @@ iframe {
     }
     .mood-button {
         width: 45%;
-        font-size: 6.5vw;
+        font-size: 6.5vmin;
     }
     .mood-text {
-        font-size: 10vw;
+        font-size: 10vmin;
     }
     /* CONTENT PAGE  */
+    .header-container h1 {
+        font-size: 10vmin;
+        margin: 0 auto 0 auto;
+        padding: 0;
+    }
     .header-container h3 {
-        font-size: 5vw;
-        margin-bottom: 10px;
+        position: relative;
+        margin: 0 auto 0 auto;
+        font-size: 6vmin;
     }
     .change-mood {
-        font-size: 7vw;
+        font-size: 7vmin;
     }
     .menu a {
-        font-size: 6vw;
-    }
-    .section-container {
-        top: 25vh;
+        font-size: 6vmin;
     }
     /* POEM SECTION  */
     .poem-title {
-        font-size: 7vw;
+        font-size: 7vmin;
     }
     .poem-text {
-        font-size: 5.5vw;
+        font-size: 5.5vmin;
     }
     /* NEWS SECTION  */
     .news-list {
@@ -556,7 +583,7 @@ iframe {
         width: 10%;
         top: 0;
         left: -30px;
-        font-size: 8vw;
+        font-size: 8vmin;
     }
     .news-list li:hover {
         border-left-width: 2px;
@@ -565,10 +592,10 @@ iframe {
         width: 90%;
     }
     .article-title {
-        font-size: 6.5vw;
+        font-size: 6.5vmin;
     }
     .article-content {
-        font-size: 6vw;
+        font-size: 6vmin;
     }
     .buttons-container {
         flex-wrap: wrap;
@@ -577,15 +604,12 @@ iframe {
     .back-button-container, .read-article-button-container {
         width: 80%;
         margin-bottom: 10px;
-        font-size: 6vw;
+        font-size: 6vmin;
     }
     .read-article-button-container {
         order: 1;
     }
     .back-button-container {
         order: 2;
-    }
-    .gif {
-        width: 90%;
     }
 }

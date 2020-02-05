@@ -3,6 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ambiencer - The perfect way to set your mood</title>
+        <script src="https://kit.fontawesome.com/335eae7a70.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script src="assets/modules/credentials.js"></script>
         <script src="assets/modules/shared.js"></script>
@@ -17,97 +18,100 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <!-- MAIN SPLASH SCREEN  -->
-        <div id="main-page">
-            <div class="welcome-main-container">
-                <div class="title-container">
-                    <h1 class="title">Ambiencer</h1>
-                    <div class="weather-box">
-                        <h1 class="weather-temp">0°</h1>
-                        <h4 class="weather-location"></h4>
+        <main>
+            <!-- MAIN SPLASH SCREEN  -->
+            <div id="main-page">
+                <div class="welcome-main-container">
+                    <div class="title-container">
+                        <h1 class="title">Ambiencer</h1>
+                        <div class="weather-box">
+                            <h1 class="weather-temp">0°</h1>
+                            <h4 class="weather-location"></h4>
+                        </div>
+                    </div>
+                    <div class="time-container">
+                        <div class="js-clock">
+                            <p class="clock">0:00</p>
+                            <p class="greeting">Good Morning!</p>
+                        </div>
+                    </div>
+                    <div class="button-header-container">
+                        <h3 class="mood-text">Choose a mood Below</h3>
                     </div>
                 </div>
-                <div class="time-container">
-                    <div class="js-clock">
-                        <p class="clock">0:00</p>
-                        <p class="greeting">Good Morning!</p>
+                <div class="mood-bar">
+                    <div class="mood-button-container">
+                        <button class="mood-button happy">Happy</button>
+                        <button class="mood-button sad">Sad</button>
+                        <button class="mood-button chill">Chill</button>
+                        <button class="mood-button hype">Hype</button>
+                        <button class="mood-button romantic">Romantic</button>
+                        <button class="mood-button motivated">Motivated</button>
                     </div>
                 </div>
-                <div class="button-header-container">
-                    <h3 class="mood-text">Choose a mood Below</h3>
+            </div>
+            <!-- END MAIN SPLASH SCREEN  -->
+            <!-- CONTENT PAGE  -->
+            <div id="content-page">
+                <div class="header-container">
+                    <h1>Ambiencer</h1>
+                    <h3>Mood: 
+                        <span class="current-mood">Mood</span>
+                        <!-- <span class="change-mood">Change</span> -->
+                        <span class="change-mood"><i class="fas fa-edit"></i></span>
+                    </h3>
+                    <nav class="nav">
+                        <ul class="menu">
+                            <li><a href="#music">Music</a></li>
+                            <li><a href="#poem">Poem</a></li>
+                            <li><a href="#news">News</a></li>
+                            <li><a href="#gif">Other</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>
-            <div class="mood-bar">
-                <div class="mood-button-container">
-                    <button class="mood-button happy">Happy</button>
-                    <button class="mood-button sad">Sad</button>
-                    <button class="mood-button chill">Chill</button>
-                    <button class="mood-button hype">Hype</button>
-                    <button class="mood-button romantic">Romantic</button>
-                    <button class="mood-button motivated">Motivated</button>
-                </div>
-            </div>
-        </div>
-        <!-- END MAIN SPLASH SCREEN  -->
-        <!-- CONTENT PAGE  -->
-        <div id="content-page">
-            <div class="header-container">
-                <h1>Ambiencer</h1>
-                <h3>Current Mood: 
-                    <span class="current-mood">Mood</span>
-                    <span class="change-mood">Change</span>
-                </h3>
-                <nav class="nav">
-                    <ul class="menu">
-                        <li><a href="#music">Music</a></li>
-                        <li><a href="#poem">Poem</a></li>
-                        <li><a href="#news">News</a></li>
-                        <li><a href="#gif">Other</a></li>
-                    </ul>
-                </nav>
-            </div>
 
-            <div class="section-container">
-                <div id="music" class="section-header">
-                    <h1>
-                        Music
-                    </h1>
+                <div class="section-container">
+                    <div id="music" class="section-header">
+                        <h1>
+                            Music
+                        </h1>
+                    </div>
+                    <div class="section-content-container section-1">
+                        <div class="video-container"></div>
+                    </div>
                 </div>
-                <div class="section-content-container section-1">
-                    <div class="video-container"></div>
+                <div class="section-container">
+                        <div id="poem" class="section-header">
+                            <h1>
+                                Poem
+                            </h1>
+                        </div>
+                        <div class="section-content-container section-2">
+                            <div id="poem-content-container"></div>
+                        </div>
+                </div>
+                <div class="section-container">
+                        <div id="news" class="section-header">
+                            <h1>
+                                News
+                            </h1>
+                        </div>
+                        <div class="section-content-container section-3">
+                            <div id="news-content-container"></div>
+                        </div>
+                </div>
+                <div class="section-container">
+                        <div id="gif" class="section-header">
+                            <h1>
+                                GIF
+                            </h1>
+                        </div>
+                        <div class="section-content-container section-4">
+                            <div id="gif-content-container"></div>
+                        </div>
                 </div>
             </div>
-            <div class="section-container">
-                    <div id="poem" class="section-header">
-                        <h1>
-                            Poem
-                        </h1>
-                    </div>
-                    <div class="section-content-container section-2">
-                        <div id="poem-content-container"></div>
-                    </div>
-            </div>
-            <div class="section-container">
-                    <div id="news" class="section-header">
-                        <h1>
-                            News
-                        </h1>
-                    </div>
-                    <div class="section-content-container section-3">
-                        <div id="news-content-container"></div>
-                    </div>
-            </div>
-            <div class="section-container">
-                    <div id="gif" class="section-header">
-                        <h1>
-                            GIF
-                        </h1>
-                    </div>
-                    <div class="section-content-container section-4">
-                        <div id="gif-content-container"></div>
-                    </div>
-            </div>
-        </div>
-        <!-- END CONTENT PAGE  -->
+            <!-- END CONTENT PAGE  -->
+        </main>
     </body>
 </html>
