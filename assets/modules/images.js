@@ -39,6 +39,8 @@ class ImageApi {
             $('.section-' + section)
                 .css({ 
                     'background-image': `url(${imageArray[i]})`,
+                    'background-repeat': 'no-repeat',
+                    'background-size': 'cover',
                     'position': 'relative',
                     'z-index:': '-2'
                 })       
