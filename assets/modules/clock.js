@@ -32,7 +32,7 @@ class Clock {
             case 2:
             case 3:
             case 4:
-                page.css('background-image', 'url("images/night.jpg")');
+                page.css('background-image', 'url("assets/images/night.jpg")');
                 return 'Hello! You\'re up late';
             case 5:
             case 6:
@@ -41,22 +41,22 @@ class Clock {
             case 9:
             case 10:
             case 11:
-                page.css('background-image', 'url("images/morning.jpg")');                return 'Good Morning!';
+                page.css('background-image', 'url("assets/images/morning.jpg")');                return 'Good Morning!';
             case 12:
             case 13:
             case 14:
             case 15:
             case 16:
-                page.css('background-image', 'url("images/afternoon.jpg")');
+                page.css('background-image', 'url("assets/images/afternoon.jpg")');
                 return 'Good Afternoon!';
             case 17:
             case 18:
             case 19:
             case 20:
-                page.css('background-image', 'url("images/evening.jpg")');
+                page.css('background-image', 'url("assets/images/evening.jpg")');
                 return 'Good Evening!';
             default:
-                page.css('background-image', 'url("images/night.jpg")');
+                page.css('background-image', 'url("assets/images/night.jpg")');
                 return 'Good Night!';
         } 
     }
