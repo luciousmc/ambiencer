@@ -1,5 +1,8 @@
 body {
     margin: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 main {
     position: relative;
@@ -31,14 +34,14 @@ main:before {
 }
 .title {
     position: relative;
-    font-size: 7vw;
+    font-size: 7vmax;
     width: 75%;
     text-shadow: 2px 2px 5px black;
 }
 .title:after {
     position: absolute;
     content: 'The best way to set the mood';
-    font-size: 2vw;
+    font-size: 2vmax;
     font-family: helvetica;
     font-style: italic;
     left: 29px;
@@ -51,11 +54,11 @@ main:before {
     text-shadow: 1px 1px 5px black;
 }
 .weather-temp {
-    font-size: 4vw;
+    font-size: 4.5vmax;
     margin: 15% 0 0 0;
 }
 .weather-location {
-    font-size: 1.2rem;
+    font-size: 2vmax;
     margin: 0;
 }
 .time-container {
@@ -73,11 +76,11 @@ main:before {
     text-shadow: 2px 2px 5px black;
 }
 .clock {
-    font-size: 8vw;
+    font-size: 7.5vmax;
     margin: 0;
 }
 .greeting {
-    font-size: 4vw;
+    font-size: 3.5vmax;
     font-weight: bold;
     margin: 0;
 }
@@ -89,7 +92,7 @@ main:before {
 }
 .mood-text {
     font-family: Times;
-    font-size: 5vw;
+    font-size: 4vmax;
     margin: 0;
 }
 .mood-bar {
@@ -101,13 +104,13 @@ main:before {
 .mood-button-container {
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 90%;
     height: 50%;
 }
 .mood-button {
     width: 15%;
     background-color: beige;
-    font-size: 2.2vw;
+    font-size: 2.5vmax;
     border-radius: 20px;
     box-shadow: 1px 1px 5px black;
     transition: .3s;
@@ -335,7 +338,7 @@ iframe {
     width:100%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1025px) {
     /* MAIN PAGE  */
     .title {
         font-size: 12vmin;
