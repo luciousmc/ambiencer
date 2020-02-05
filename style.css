@@ -132,7 +132,7 @@ main:before {
 .header-container h1 {
     margin: 0;
     color: white;
-    font-size: 3.5em;
+    font-size: 9vmin;
     padding-top: 1%;
     padding-left: 5%;
     text-shadow: 1px 1px 5px black;
@@ -141,9 +141,9 @@ main:before {
     position: absolute;
     color: burlywood;
     text-shadow: 1px 1px 1px black;
-    top: 10%;
+    top: 15%;
     right: 3%;
-    font-size: 1.5em;
+    font-size: 5vmin;
 }
 .current-mood {
     margin-right: 8px;
@@ -374,13 +374,9 @@ iframe {
     /* CONTENT PAGE */
     .header-container h1 {
         font-size: 10vmin;
-        /* margin: 0 auto 0 auto; */
-        /* padding: 0; */
     }
     .header-container h3 {
-        /* position: relative; */
         font-size: 4vmin;
-        /* margin: 0 auto 0 auto; */
     }
     .menu a {
         font-size: 4vmin;
@@ -520,7 +516,7 @@ iframe {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
     /* MAIN PAGE  */
     .welcome-main-container {
         height: 70vh;
@@ -545,9 +541,15 @@ iframe {
         font-size: 10vmin;
     }
     /* CONTENT PAGE  */
+    .header-container h1 {
+        font-size: 10vmin;
+        margin: 0 auto 0 auto;
+        padding: 0;
+    }
     .header-container h3 {
-        font-size: 5vmin;
-        margin-bottom: 10px;
+        position: relative;
+        margin: 0 auto 0 auto;
+        font-size: 6vmin;
     }
     .change-mood {
         font-size: 7vmin;
