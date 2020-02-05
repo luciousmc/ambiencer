@@ -1,6 +1,6 @@
 class PoemsAPI{
     constructor(){
-        this.endpoint = 'http://poetrydb.org/lines/';
+        this.endpoint = 'http://poetrydb.org/lines,linecount/';
         this.apiKey = null;
         this.moodVariations = {
             happy: ['happy', 'cheerful', 'laugh', 'smile'],
@@ -17,7 +17,7 @@ class PoemsAPI{
         loadingText.text('Loading Poem...');
         sectionContainer.append(loadingText);
 
-        const searchTerm = this.makeQuery(this.moodVariations[mood]);
+        const searchTerm = this.makeQuery(this.moodVariations[mood]) + ';30:abs';
        $.getJSON(this.endpoint + searchTerm)
                 .done((result)=>{
                     $(loadingText).fadeOut(300);
