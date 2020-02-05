@@ -254,9 +254,7 @@ iframe {
     width: 75%;
     background-color: rgba(0,0,0,0.5);
     color: white;
-    max-height: 60vh;
-    overflow-y: scroll;
-    overflow-x: unset;
+    min-height: 60vh;
     box-shadow: 0 0 5px burlywood;
 }
 
