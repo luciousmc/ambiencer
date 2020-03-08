@@ -5,28 +5,56 @@ class Clock {
         this.minutes = null;
         this.seconds = null;
     }
+
     getTime(){
+
+        // Instanstiate a new date and stores values for hours, minute and seconds
         const date = new Date();
         this.hours = date.getHours();
         this.minutes = date.getMinutes();
         this.seconds = date.getSeconds();
+
+        // If hours is less than 12, it is morning(am). Otherwise its pm. 
         let dayOrNight = this.hours < 12 ? "am" : "pm";
 
-        let clock12 = `${this.hours > 12 ? `${this.hours - 12}`
-                                         : this.hours}:${this.minutes < 10 ? `0${this.minutes}`
-                                         : this.minutes} ${dayOrNight}`;
+        // Convert to 12 Hour clock
+        let clock12;    
+        
+        // If hours is greater than 12 but less than 24, subtract 12 from the hour
+        if (this.hours > 12 && this.hours <= 23) {
+            clock12 = this.hours - 12;
 
-        let clock24 = `${this.hours < 10 ? `0${this.hours}` : this.hours}:
-                     ${this.minues < 10 ? `0${this.minutes}` : this.minutes}:
-                     ${this.seconds < 10 ? `0${this.seconds}`: this.seconds}`;
+        // If hour is 0(midnight), set the hour to 12
+        } else if (this.hours === 0) {
+            clock12 = 12;
+
+        // Otherwise just use the current hour
+        } else {
+            clock12 = this.hours;
+        }
+        
+        // Add a leading zero if the minutes are less than 10
+        if (this.minutes < 10) {
+            clock12 += ':0' + this.minutes;
+        } else {
+            clock12 += ':' + this.minutes;
+        }
+
+        // Attach am or pm to the end of the time
+        clock12 += dayOrNight;
 
         const greeting = this.setGreeting();
 
         $('.clock').text(clock12);
         $('.greeting').text(greeting);
     }
+
     setGreeting(){
+
+        // Selects the body to attach background images
         let page = $('body');
+
+        // Changes Greeting text and background image based on the hour of the day
         switch(this.hours){
             case 1:
             case 2:
@@ -61,6 +89,8 @@ class Clock {
         } 
     }
     init(){
+
+        // Start the clock
         setInterval(this.getTime, 1000);
     }
 }

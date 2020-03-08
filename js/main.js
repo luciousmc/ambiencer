@@ -1,7 +1,7 @@
 $(document).ready(startApp);
 
 function startApp(){
-    // SMOOTH SCROLLING 
+    // Smooth Scrolling
     $('a').on('click', (event)=> {
         if (event.currentTarget.hash !== ''){
             const hash = event.currentTarget.hash;
