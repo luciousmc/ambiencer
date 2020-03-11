@@ -1,12 +1,12 @@
 # Ambiencer
 
-![Screen Shot 1](assets/images/screens/ambiencer-screen.png)
+![Screen Shot 1](/images/screens/ambiencer-screen.png)
 
 ## Overview
 
 Ambiencer allows you to choose a mood and it will gather music, a poem, some news and a random GIF based on what was chosen.
 
-![Demo GIF](assets/images/screens/ambiencer-demo1.gif)
+![Demo GIF](/images/screens/ambiencer-demo1.gif)
 
 ## Technologies Used
 
