@@ -56,7 +56,7 @@ class Weather {
   }
   setWeather(){
     // Select element for weather and insert data
-    $('.weather-temp').text(this.temp + '&deg;' + this.tempUnit);
+    $('.weather-temp').text(this.temp + '°' + this.tempUnit);
 
     // Select element for location and insert data
     $('.weather-location').text(this.city + ', ' + this.state);
