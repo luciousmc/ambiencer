@@ -26,7 +26,7 @@ class Weather {
     console.log('something went wrong: ', geolocationObj);
   }
   getLocation(latitude, longitude){
-    // Get request using arguments passed into function
+    // Get request using latitude and longitude arguments
     $.getJSON(`https://api.weather.gov/points/${latitude},${longitude}`, (data)=>{
 
       // Get forecast url, city and state from the result data
@@ -56,7 +56,7 @@ class Weather {
   }
   setWeather(){
     // Select element for weather and insert data
-    $('.weather-temp').text(this.temp + '°' + this.tempUnit);
+    $('.weather-temp').text(this.temp + '&deg;' + this.tempUnit);
 
     // Select element for location and insert data
     $('.weather-location').text(this.city + ', ' + this.state);
