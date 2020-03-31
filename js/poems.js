@@ -1,6 +1,6 @@
 class PoemsAPI{
   constructor(){
-    this.endpoint = 'http://poetrydb.org/lines,linecount/';
+    this.endpoint = 'https://poetrydb.org/lines,linecount/';
     this.moodVariations = {
       happy: ['happy', 'cheerful', 'laugh', 'smile'],
       sad: ['sad', 'gloomy', 'sorrow'],

@@ -77,7 +77,7 @@ class MusicPlayer {
     return output;
   }
   render(results){
-    const yt_baseURL = 'http://www.youtube.com/embed/';
+    const yt_baseURL = 'https://www.youtube.com/embed/';
     const yt_options = this.generateYoutubeOptions(results);
 
     // Create an iframe element and use the finaly query string
