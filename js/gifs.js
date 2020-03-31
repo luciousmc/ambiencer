@@ -1,6 +1,6 @@
 class GifAPI {
   constructor(keys){
-    this.endpoint = 'https://api.giphy.com/v1/gifs/search'
+    this.endpoint = 'http://api.giphy.com/v1/gifs/search'
     this.apiKey = keys.gifs;
     this.moodVariations = {
       happy: ['happy', 'cheerful', 'laugh', 'smile'],
