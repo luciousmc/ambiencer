@@ -6,6 +6,8 @@
 
 Ambiencer allows you to choose a mood and it will gather music, a poem, some news and a random GIF based on what was chosen.
 
+The app is live at [https://ambiencer.marlonclay.com](https://ambiencer.marlonclay.com)
+
 ![Demo GIF](/images/screens/ambiencer-demo1.gif)
 
 ## Technologies Used
