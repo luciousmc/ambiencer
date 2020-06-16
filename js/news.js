@@ -15,10 +15,13 @@ class NewsApi {
   }
   getNews(mood){
     const ajaxOptions = {
-      apiKey: this.apiKey,
+      // apiKey: this.apiKey,
       qInTitle: this.makeQuery(mood),
       language: 'en',
-      sortBy: 'relevancy'
+      sortBy: 'relevancy',
+      headers: {
+        'X-Api-Key': this.apiKey
+      }
     }
     $.getJSON(this.endpoint, ajaxOptions)
       .done((result)=>{
