@@ -7,7 +7,8 @@ class App {
     this.weather = new Weather();
     this.music = new MusicPlayer(apiKeys);
     this.images = new ImageApi(apiKeys);
-    this.news = new NewsApi(apiKeys);
+    // this.news = new NewsApi(apiKeys);
+    this.bingNews = new BingNews();
     this.gifs = new GifAPI(apiKeys);
     this.poems = new PoemsAPI();
   }
@@ -54,7 +55,8 @@ class App {
     this.generateHeaderText(mood);
     this.music.getMusic(mood);
     this.images.getImages(mood);
-    this.news.getNews(mood);
+    // this.news.getNews(mood);
+    this.bingNews.getNews(mood);
     this.gifs.getGifs(mood);
     this.poems.getPoems(mood);
   }
