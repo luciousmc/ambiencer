@@ -13,6 +13,8 @@ class BingNews {
     this.container = $('#news-content-container');
   }
   async getNews(mood){
+    debugger;
+    console.log(this.moodVariations[mood])
     const fetchOptions = {
       method: 'GET',
       count: this.articleAmt,
