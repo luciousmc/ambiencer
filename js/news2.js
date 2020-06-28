@@ -1,3 +1,5 @@
+
+
 class BingNews {
   constructor() {
     this.endpoint = 'https://bing-news-search1.p.rapidapi.com/news/search';
@@ -13,13 +15,16 @@ class BingNews {
     this.container = $('#news-content-container');
   }
   async getNews(mood){
-    debugger;
-    console.log(this.moodVariations[mood])
-    const fetchOptions = {
-      method: 'GET',
+
+    const newsOptions = {
       count: this.articleAmt,
       freshness: 'Month',
-      q: this.makeQuery(this.moodVariations[mood]),
+      q: this.makeQuery(mood)
+    }
+    
+    const ajaxOptions = {
+      method: 'GET',
+      data: newsOptions,
       headers: {
         "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
         "x-rapidapi-key": "d4c459eef1msh9e5b5c683cdb80dp12d585jsna196dc321fa1",
@@ -28,9 +33,8 @@ class BingNews {
     }
 
     try {
-      const response = await fetch(this.endpoint, fetchOptions);
-      const result = await response.json();
-      console.log({result});
+      const response = await $.ajax(this.endpoint, ajaxOptions);
+      console.log({response});
     } catch (error) {
       console.log({error})
     }
